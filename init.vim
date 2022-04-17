@@ -19,6 +19,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
+" color scheme
+Plug 'cocopon/iceberg.vim'
 
 call plug#end()
 
@@ -46,7 +48,7 @@ set hls                "検索した文字をハイライトする
 set ignorecase         "検索時に大文字小文字無視
 set smartcase          "大文字も含めた検索の場合はその通りに検索する
 set pumheight=10       "補完メニューの高さ
-set mouse=a            "mouseスクロールONに
+
 augroup fileTypeIndent
     autocmd!
     autocmd BufNewFile,BufRead *.py setlocal tabstop=4 softtabstop=4 shiftwidth=4
@@ -54,6 +56,7 @@ augroup fileTypeIndent
 augroup END
 
 
+colorscheme iceberg
 "-------------------------
 "  keymap
 "-------------------------
