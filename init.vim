@@ -27,12 +27,12 @@ call plug#end()
 "------------------------
 "  初期設定
 "------------------------
-set number             "行番号を表示
 if has('termguicolors') && $TERM_PROGRAM ==# 'iTerm.app'
     let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
     let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
     set termguicolors
 endif
+set number             "行番号を表示
 set cursorline         "カーソル行をハイライト
 set scrolloff=5        "スクロールする時に下が見えるようにする
 set virtualedit=all    "文字がない場所にもカーソルを移動できるようにする
@@ -96,6 +96,12 @@ let g:lightline = {
 set laststatus=2
 " # hide --INSERT--
 set noshowmode
+
+"------------------------
+" gitgutter
+"------------------------
+set signcolumn=yes " 常に左端のサイン列を表示
+set updatetime=100 " 反映されるまでの時間(1s)
 
 "------------------------
 " fzf
