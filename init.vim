@@ -35,7 +35,7 @@ augroup END
 colorscheme iceberg
 
 runtime ./keymap.vim
-------------------------
+"------------------------
 "  lightline
 "------------------------
 let g:lightline = {
