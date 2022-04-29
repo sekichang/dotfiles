@@ -8,8 +8,8 @@ balias ll 'ls -l --icons --time-style iso'
 balias la 'ls -a --icons'
 balias lla 'll -a'
 balias cat bat
-balias g git 
-balias d docker 
+balias g git
+balias d docker
 alias vi nvim
 
 
