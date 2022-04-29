@@ -22,6 +22,24 @@ Plug 'junegunn/fzf.vim'
 " color scheme
 Plug 'cocopon/iceberg.vim'
 
+" lsp
+Plug 'neovim/nvim-lspconfig'
+Plug 'williamboman/nvim-lsp-installer'
+
+" cmp
+Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-cmdline'
+
+" For vsnip users.
+Plug 'hrsh7th/cmp-vsnip'
+Plug 'hrsh7th/vim-vsnip'
+
+" icon
+Plug 'onsails/lspkind.nvim'
+
 call plug#end()
 
 "------------------------
@@ -48,6 +66,7 @@ set hls                "検索した文字をハイライトする
 set ignorecase         "検索時に大文字小文字無視
 set smartcase          "大文字も含めた検索の場合はその通りに検索する
 set pumheight=10       "補完メニューの高さ
+set inccommand=split
 
 augroup fileTypeIndent
     autocmd!
@@ -78,6 +97,10 @@ nnoremap <silent><ESC><ESC> :nohlsearch<CR>
 " + と - で数字のインクリメント、デクリメントを行う
 nnoremap + <C-a>
 nnoremap - <C-x>
+
+" レジスタに保存しないで削除
+nnoremap x "_x
+nnoremap s "_s
 
 "------------------------
 "  lightline
@@ -127,3 +150,86 @@ nnoremap <silent> <leader>r :Rg<CR>
 "------------------------
 autocmd BufWritePre * :%s/\s\+$//ge
 
+"------------------------
+" lsp
+"------------------------
+lua << EOF
+-- LSPクライアントがバッファにアタッチされたときに実行される
+local on_attach = function(client, bufnr)
+  local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
+
+  -- LSPサーバーのフォーマット機能を無効にする
+  -- client.resolved_capabilities.document_formatting = false
+
+  local opts = { noremap = true, silent = true }
+  buf_set_keymap("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
+  buf_set_keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
+  buf_set_keymap("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
+  buf_set_keymap("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
+  buf_set_keymap("n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
+  buf_set_keymap("n", "<space>wa", "<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>", opts)
+  buf_set_keymap("n", "<space>wr", "<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>", opts)
+  buf_set_keymap("n", "<space>wl", "<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>", opts)
+  buf_set_keymap("n", "<space>D", "<cmd>lua vim.lsp.buf.type_definition()<CR>", opts)
+  buf_set_keymap("n", "<space>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
+  buf_set_keymap("n", "<space>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
+  buf_set_keymap("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
+  buf_set_keymap("n", "<space>e", "<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>", opts)
+  buf_set_keymap("n", "[d", "<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>", opts)
+  buf_set_keymap("n", "]d", "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>", opts)
+  buf_set_keymap("n", "<space>q", "<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>", opts)
+  buf_set_keymap("n", "<space>F", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
+end
+
+local lsp_installer = require "nvim-lsp-installer"
+lsp_installer.on_server_ready(function(server)
+  local opts = {}
+  opts.on_attach = on_attach
+  opts.capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
+
+  server:setup(opts)
+end)
+
+-- nvim-cmp(補完) の設定
+vim.opt.completeopt = "menu,menuone,noselect"
+
+local cmp = require "cmp"
+cmp.setup {
+  snippet = {
+    expand = function(args)
+      vim.fn["vsnip#anonymous"](args.body)
+    end,
+  },
+  mapping = {
+    ["<C-d>"] = cmp.mapping.scroll_docs(-4),
+    ["<C-f>"] = cmp.mapping.scroll_docs(4),
+    ["<S-Space>"] = cmp.mapping.complete(),
+    ["<C-e>"] = cmp.mapping.close(),
+    ["<CR>"] = cmp.mapping.confirm { select = true },
+  },
+  sources = cmp.config.sources({
+    { name = "nvim_lsp" },
+    { name = "vsnip" },
+  }, {
+    { name = "buffer" },
+  }),
+}
+
+local lspkind = require('lspkind')
+cmp.setup {
+  formatting = {
+    format = lspkind.cmp_format({
+      mode = 'symbol', -- show only symbol annotations
+      maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
+
+      -- The function below will be called before any actual modifications from lspkind
+      -- so that you can provide more controls on popup customization. (See [#30](https://github.com/onsails/lspkind-nvim/pull/30))
+      before = function (entry, vim_item)
+--        ...
+        return vim_item
+      end
+    })
+  }
+}
+
+EOF
