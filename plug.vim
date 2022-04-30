@@ -11,7 +11,6 @@ Plug 'Yggdroot/indentLine'
 
 " Git差分表示
 Plug 'airblade/vim-gitgutter'
-
 " Git
 Plug 'tpope/vim-fugitive'
 
@@ -46,5 +45,7 @@ Plug 'folke/trouble.nvim'
 
 "
 " Plug 'nvim-lua/completion-nvim'
+
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 call plug#end()
