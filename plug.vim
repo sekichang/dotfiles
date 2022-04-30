@@ -40,4 +40,11 @@ Plug 'hrsh7th/vim-vsnip'
 " icon
 Plug 'onsails/lspkind.nvim'
 
+" error list
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'folke/trouble.nvim'
+
+"
+" Plug 'nvim-lua/completion-nvim'
+
 call plug#end()
