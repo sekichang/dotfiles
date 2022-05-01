@@ -48,4 +48,6 @@ Plug 'folke/trouble.nvim'
 
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
+Plug 'tami5/lspsaga.nvim'
+
 call plug#end()
