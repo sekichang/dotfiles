@@ -1,0 +1,17 @@
+set number             "行番号を表示
+set cursorline         "カーソル行をハイライト
+set scrolloff=5        "スクロールする時に下が見えるようにする
+set virtualedit=all    "文字がない場所にもカーソルを移動できるようにする
+set autoindent         "改行時に自動でインデントする
+set smartindent        "改行入力行の末尾にあわせてインデントを増減する
+set tabstop=2          "タブを何文字の空白に変換するか
+set shiftwidth=2       "自動インデント時に入力する空白の数
+set softtabstop=2      "TABキーやBSキーを打ち込んだときに動く幅の設定
+set expandtab          "タブ入力を空白に変換
+set splitright         "画面を縦分割する際に右に開く
+set clipboard=unnamed  "yank した文字列をクリップボードにコピー
+set hls                "検索した文字をハイライトする
+set ignorecase         "検索時に大文字小文字無視
+set smartcase          "大文字も含めた検索の場合はその通りに検索する
+set pumheight=10       "補完メニューの高さ
+set inccommand=split
