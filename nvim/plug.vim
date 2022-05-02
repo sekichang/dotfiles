@@ -11,6 +11,7 @@ Plug 'Yggdroot/indentLine'
 
 " Git差分表示
 Plug 'airblade/vim-gitgutter'
+
 " Git
 Plug 'tpope/vim-fugitive'
 
