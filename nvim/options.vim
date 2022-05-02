@@ -15,3 +15,27 @@ set ignorecase         "検索時に大文字小文字無視
 set smartcase          "大文字も含めた検索の場合はその通りに検索する
 set pumheight=10       "補完メニューの高さ
 set inccommand=split
+
+"------------------------
+" gitgutter
+"------------------------
+set signcolumn=yes " 常に左端のサイン列を表示
+set updatetime=100 " 反映されるまでの時間(1s)
+
+"------------------------
+" fzf
+"------------------------
+" fzf settings
+let $FZF_DEFAULT_OPTS="--layout=reverse"
+let $FZF_DEFAULT_COMMAND="rg --files --hidden --glob '!.git/**'"
+let g:fzf_layout = {'up':'~90%', 'window': { 'width': 0.8, 'height': 0.8,'yoffset':0.5,'xoffset': 0.5, 'border': 'sharp' } }
+
+let mapleader = "\<Space>"
+
+" fzf
+nnoremap <silent> <leader>f :Files<CR>
+nnoremap <silent> <leader>g :GFiles<CR>
+nnoremap <silent> <leader>G :GFiles?<CR>
+nnoremap <silent> <leader>b :Buffers<CR>
+nnoremap <silent> <leader>h :History<CR>
+nnoremap <silent> <leader>r :Rg<CR>
