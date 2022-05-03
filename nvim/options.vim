@@ -16,6 +16,12 @@ set smartcase          "大文字も含めた検索の場合はその通りに�
 set pumheight=10       "補完メニューの高さ
 set inccommand=split
 
+if has('termguicolors') && $TERM_PROGRAM ==# 'iTerm.app'
+    let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+    let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+    set termguicolors
+endif
+
 "------------------------
 " gitgutter
 "------------------------
