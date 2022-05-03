@@ -7,6 +7,7 @@ if has('termguicolors') && $TERM_PROGRAM ==# 'iTerm.app'
     let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
     set termguicolors
 endif
+colorscheme iceberg
 
 augroup fileTypeIndent
     autocmd!
@@ -14,7 +15,10 @@ augroup fileTypeIndent
     autocmd BufNewFile,BufRead *.rb setlocal tabstop=2 softtabstop=2 shiftwidth=2
 augroup END
 
-colorscheme iceberg
+"------------------------
+" 保存時に行末の空白削除
+"------------------------
+autocmd BufWritePre * :%s/\s\+$//ge
 
 "------------------------
 "  lightline
@@ -33,11 +37,6 @@ let g:lightline = {
 set laststatus=2
 " # hide --INSERT--
 set noshowmode
-
-"------------------------
-" 保存時に行末の空白削除
-"------------------------
-autocmd BufWritePre * :%s/\s\+$//ge
 
 runtime ./lspconfig.vim
 
