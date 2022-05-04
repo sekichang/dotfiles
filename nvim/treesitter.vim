@@ -2,17 +2,18 @@ lua << EOF
 require'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all"
   ensure_installed = {
+    "fish",
     "html",
     "javascript",
-    "typescript",
-    "tsx",
-    "scss",
     "json",
-    "yaml",
-    "toml",
-    "vim",
     "lua",
-    "fish"
+    "markdown",
+    "scss",
+    "toml",
+    "tsx",
+    "typescript",
+    "vim",
+    "yaml",
   },
 
   -- Install parsers synchronously (only applied to `ensure_installed`)
@@ -31,6 +32,9 @@ require'nvim-treesitter.configs'.setup {
     -- list of language that will be disabled
     -- disable = { "c", "rust" },
   },
+
+  indent = {
+    enable = true
+  },
 }
 EOF
-
