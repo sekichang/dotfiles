@@ -54,4 +54,5 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 Plug 'tami5/lspsaga.nvim'
 
+Plug 'folke/which-key.nvim'
 call plug#end()
