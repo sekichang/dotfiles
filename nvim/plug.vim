@@ -34,11 +34,11 @@ Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'saadparwaiz1/cmp_luasnip'
 
-" For vsnip users.
-" Plug 'hrsh7th/cmp-vsnip'
-" Plug 'hrsh7th/vim-vsnip'
+" snipet
 Plug 'L3MON4D3/LuaSnip'
 Plug 'rafamadriz/friendly-snippets'
+
+Plug 'ray-x/lsp_signature.nvim'
 
 " icon
 Plug 'onsails/lspkind.nvim'
