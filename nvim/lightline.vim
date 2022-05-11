@@ -5,7 +5,7 @@ let g:lightline = {
   \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
   \ },
   \ 'component_function': {
-  \   'gitbranch': 'fugitivehead()'
+  \   'gitbranch': 'FugitiveHead'
   \ },
 \ }
 " # show statusbar
