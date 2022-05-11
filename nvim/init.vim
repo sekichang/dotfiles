@@ -4,6 +4,7 @@ runtime ./plug.vim
 runtime ./colorscheme.vim
 runtime ./lspconfig.vim
 runtime ./cmp.vim
+runtime ./telescope.vim
 runtime ./treesitter.vim
 runtime ./lspsaga.vim
 runtime ./trouble.vim
