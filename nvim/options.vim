@@ -45,3 +45,8 @@ set updatetime=100 " 反映されるまでの時間(1s)
 "nnoremap <silent> <leader>b :Buffers<CR>
 "nnoremap <silent> <leader>h :History<CR>
 "nnoremap <silent> <leader>r :Rg<CR>
+"
+"------------------------
+" indentLine
+"------------------------
+let g:indentLine_fileTypeExclude = ['help', 'markdown']
