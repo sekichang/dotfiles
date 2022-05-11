@@ -16,8 +16,8 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 
 " fzf
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
+"Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+"Plug 'junegunn/fzf.vim'
 
 " color scheme
 Plug 'cocopon/iceberg.vim'
@@ -50,6 +50,10 @@ Plug 'folke/trouble.nvim'
 "
 " Plug 'nvim-lua/completion-nvim'
 
+" telescope
+Plug 'nvim-telescope/telescope.nvim'
+
+" treesitter
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 Plug 'tami5/lspsaga.nvim'
