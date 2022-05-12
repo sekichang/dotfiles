@@ -1,7 +1,7 @@
 # install
 
 ``` sh
-brew install nvim fish tig
+brew install git nvim fish tig tmux exa bat fzf volta
 cd ~/.config
 ln -s ~/dotfiles/nvim
 cd ~/.config/fish
