@@ -6,8 +6,15 @@ local on_attach = function(client, bufnr)
   -- LSPサーバーのフォーマット機能を無効にする
   -- client.resolved_capabilities.document_formatting = false
 
-  cfg = {}  -- add you config here
-  require "lsp_signature".setup(cfg)
+--  cfg = {}  -- add you config here
+--  require "lsp_signature".setup(cfg)
+  require "lsp_signature".setup({
+    bind = true,
+    handler_opts = {
+      border = "rounded"
+    },
+    max_width = 120,
+  })
 
   local opts = { noremap = true, silent = true }
   keymap("n", "gD"       , "<cmd>lua vim.lsp.buf.declaration()<CR>"                               , opts)
@@ -30,12 +37,20 @@ local on_attach = function(client, bufnr)
 end
 
 local lsp_installer = require "nvim-lsp-installer"
+local lspconfig = require "lspconfig"
 local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
-lsp_installer.on_server_ready(function(server)
-  local opts = {}
-  opts.on_attach = on_attach
-  opts.capabilities = capabilities
-
-  server:setup(opts)
-end)
+lsp_installer.setup()
+for _, server in ipairs(lsp_installer.get_installed_servers()) do
+  lspconfig[server.name].setup {
+    on_attach = on_attach,
+    capabilities = capabilities
+  }
+end
+--lsp_installer.on_server_ready(function(server)
+--  local opts = {}
+--  opts.on_attach = on_attach
+--  opts.capabilities = capabilities
+--
+--  server:setup(opts)
+--end)
 EOF
