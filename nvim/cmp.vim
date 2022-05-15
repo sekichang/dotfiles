@@ -17,13 +17,20 @@ end
 
 cmp.setup({
   formatting = {
+    fields = { "kind", "abbr", "menu" },
     format = lspkind.cmp_format({
-      mode = 'symbol_text', -- show only symbol annotations
+      mode = 'symbol', -- show only symbol annotations
       maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
 
       -- The function below will be called before any actual modifications from lspkind
       -- so that you can provide more controls on popup customization. (See [#30](https://github.com/onsails/lspkind-nvim/pull/30))
       before = function (entry, vim_item)
+        vim_item.menu = ({
+        nvim_lsp = "[LSP]",
+        luasnip  = "[Snippet]",
+        buffer   = "[Buffer]",
+        path     = "[Path]",
+      })[entry.source.name]
         return vim_item
       end
     })
@@ -83,6 +90,7 @@ cmp.setup({
     { name = 'luasnip' }, -- For luasnip users.
     -- { name = 'ultisnips' }, -- For ultisnips users.
     -- { name = 'snippy' }, -- For snippy users.
+    { name = 'path'}
   }, {
     { name = 'buffer' },
   })
