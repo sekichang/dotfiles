@@ -81,10 +81,6 @@ local opts = {
 
 local mappings = {
   ["a"] = { "<cmd>Alpha<cr>", "Alpha" },
-  ["b"] = {
-    "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
-    "Buffers",
-  },
   ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
   ["w"] = { "<cmd>w!<CR>", "Save" },
   ["q"] = { "<cmd>q!<CR>", "Quit" },
@@ -97,13 +93,17 @@ local mappings = {
   ["R"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
   ["P"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
 
-  p = {
-    name = "Plug",
-    c = { "<cmd>PlugClean<cr>", "Clean" },
-    i = { "<cmd>PlugInstall<cr>", "Install" },
-    S = { "<cmd>PlugStatus<cr>", "Status" },
-    u = { "<cmd>PlugUpdate<cr>", "Update" },
-    U = { "<cmd>PlugUpgrade<cr>", "Upgrade" },
+  b = {
+    name = "Buffers",
+    b = {
+      "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
+      "Buffers",
+    },
+    l = { ":Telescope buffers<CR>", "List Buffers" },
+    d = { ":bd<cr>", "Delete" },
+    f = { ":Telescope buffers <cr>", "Find" },
+    n = { ":bn<cr>", "Next" },
+    p = { ":bp<cr>", "Previous" },
   },
 
   g = {
@@ -160,16 +160,29 @@ local mappings = {
       "Workspace Symbols",
     },
   },
+
+  p = {
+    name = "Plug",
+    c = { "<cmd>PlugClean<cr>", "Clean" },
+    i = { "<cmd>PlugInstall<cr>", "Install" },
+    s = { "<cmd>PlugStatus<cr>", "Status" },
+    u = { "<cmd>PlugUpdate<cr>", "Update" },
+    U = { "<cmd>PlugUpgrade<cr>", "Upgrade" },
+  },
+
   s = {
     name = "Search",
     b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
     c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
+    C = { "<cmd>Telescope commands<cr>", "Commands" },
+    f = { ":Telescope find_files <cr>", "Find File" },
+    g = { ":Telescope live_grep <cr>", "Grep" },
     h = { "<cmd>Telescope help_tags<cr>", "Find Help" },
+    j = { ":Telescope jumplist <cr>", "Jumplist" },
+    k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
     M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
     r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
     R = { "<cmd>Telescope registers<cr>", "Registers" },
-    k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
-    C = { "<cmd>Telescope commands<cr>", "Commands" },
   },
 
   t = {
