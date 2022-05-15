@@ -21,6 +21,10 @@ Plug 'tpope/vim-fugitive'
 
 " color scheme
 Plug 'cocopon/iceberg.vim'
+"Plug 'sainnhe/sonokai'
+"Plug 'navarasu/onedark.nvim'
+"Plug 'rebelot/kanagawa.nvim'
+Plug 'olimorris/onedarkpro.nvim'
 
 " lsp
 Plug 'neovim/nvim-lspconfig'

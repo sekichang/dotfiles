@@ -1,1 +1,1 @@
-colorscheme iceberg
+colorscheme onedarkpro
