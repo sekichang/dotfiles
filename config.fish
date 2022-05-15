@@ -9,6 +9,8 @@ balias la 'ls -a --icons'
 balias lla 'll -a'
 balias cat bat
 balias g git
+abbr -a ga 'git add'
+abbr -a gs 'git status'
 balias d docker
 alias vi nvim
 
