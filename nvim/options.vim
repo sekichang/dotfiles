@@ -15,6 +15,7 @@ set ignorecase         "検索時に大文字小文字無視
 set smartcase          "大文字も含めた検索の場合はその通りに検索する
 set pumheight=10       "補完メニューの高さ
 set inccommand=split
+set completeopt=menu,menuone,noselect
 
 if has('termguicolors') && $TERM_PROGRAM ==# 'iTerm.app'
     let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
