@@ -10,7 +10,8 @@ Plug 'itchyny/lightline.vim'
 Plug 'Yggdroot/indentLine'
 
 " Git差分表示
-Plug 'airblade/vim-gitgutter'
+"Plug 'airblade/vim-gitgutter'
+Plug 'lewis6991/gitsigns.nvim'
 
 " Git
 Plug 'tpope/vim-fugitive'
@@ -29,6 +30,7 @@ Plug 'olimorris/onedarkpro.nvim'
 " lsp
 Plug 'neovim/nvim-lspconfig'
 Plug 'williamboman/nvim-lsp-installer'
+Plug 'ray-x/lsp_signature.nvim'
 
 " cmp
 Plug 'hrsh7th/nvim-cmp'
@@ -42,13 +44,11 @@ Plug 'saadparwaiz1/cmp_luasnip'
 Plug 'L3MON4D3/LuaSnip'
 Plug 'rafamadriz/friendly-snippets'
 
-Plug 'ray-x/lsp_signature.nvim'
-
 " icon
 Plug 'onsails/lspkind.nvim'
-
-" error list
 Plug 'kyazdani42/nvim-web-devicons'
+
+" error
 Plug 'folke/trouble.nvim'
 
 "

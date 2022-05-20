@@ -8,6 +8,7 @@ runtime ./telescope.vim
 runtime ./treesitter.vim
 runtime ./lspsaga.vim
 runtime ./trouble.vim
+runtime ./gitsigns.vim
 runtime ./lightline.vim
 runtime ./which-key.vim
 runtime ./autocmd.vim
