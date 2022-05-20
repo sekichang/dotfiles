@@ -1,4 +1,5 @@
 set number             "行番号を表示
+set relativenumber     "相対行番号を表示
 set cursorline         "カーソル行をハイライト
 set scrolloff=5        "スクロールする時に下が見えるようにする
 set virtualedit=all    "文字がない場所にもカーソルを移動できるようにする
