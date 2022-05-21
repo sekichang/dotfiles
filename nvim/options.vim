@@ -15,8 +15,13 @@ set hls                "検索した文字をハイライトする
 set ignorecase         "検索時に大文字小文字無視
 set smartcase          "大文字も含めた検索の場合はその通りに検索する
 set pumheight=10       "補完メニューの高さ
-set inccommand=split
+set pumblend=10        "補完メニューを半透明
+set winblend=10        "floating windows を半透明
 set completeopt=menu,menuone,noselect
+
+if has('nvim')
+  set inccommand=split
+endif
 
 if has('termguicolors') && $TERM_PROGRAM ==# 'iTerm.app'
     let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
