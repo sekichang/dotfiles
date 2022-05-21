@@ -32,6 +32,7 @@ Plug 'olimorris/onedarkpro.nvim'
 Plug 'neovim/nvim-lspconfig'
 Plug 'williamboman/nvim-lsp-installer'
 Plug 'ray-x/lsp_signature.nvim'
+Plug 'tami5/lspsaga.nvim'
 
 " cmp
 Plug 'hrsh7th/nvim-cmp'
@@ -52,16 +53,11 @@ Plug 'kyazdani42/nvim-web-devicons'
 " error
 Plug 'folke/trouble.nvim'
 
-"
-" Plug 'nvim-lua/completion-nvim'
-
 " telescope
 Plug 'nvim-telescope/telescope.nvim'
 
 " treesitter
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-
-Plug 'tami5/lspsaga.nvim'
 
 Plug 'folke/which-key.nvim'
 call plug#end()
