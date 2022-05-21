@@ -4,7 +4,8 @@
 call plug#begin()
 
 " ステータスバーのカスタマイズ
-Plug 'itchyny/lightline.vim'
+"Plug 'itchyny/lightline.vim'
+Plug 'nvim-lualine/lualine.nvim'
 
 " インデントの可視化
 Plug 'Yggdroot/indentLine'
