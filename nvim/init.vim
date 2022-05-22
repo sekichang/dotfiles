@@ -9,7 +9,7 @@ runtime ./treesitter.vim
 runtime ./lspsaga.vim
 runtime ./trouble.vim
 runtime ./gitsigns.vim
-runtime ./lualine.vim
+runtime ./galaxyline.vim
 runtime ./autopairs.vim
 runtime ./autotag.vim
 runtime ./which-key.vim
