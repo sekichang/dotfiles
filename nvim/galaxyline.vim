@@ -196,9 +196,9 @@ gls.right[2] = {
   },
 }
 gls.right[3] = {
-  time = {
+  Time = {
     provider = function()
-      return ' ' .. '  ' .. os.date('%H:%M') .. ' '
+      return '' .. '  ' .. os.date('%H:%M') .. ' '
     end,
     highlight = {colors.bg, colors.green},
     separator = " ",
