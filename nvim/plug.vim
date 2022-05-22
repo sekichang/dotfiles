@@ -60,4 +60,8 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 Plug 'folke/which-key.nvim'
+Plug 'kevinhwang91/nvim-hlslens'
+Plug 'windwp/nvim-autopairs'
+Plug 'windwp/nvim-ts-autotag'
+
 call plug#end()

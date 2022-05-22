@@ -10,5 +10,9 @@ runtime ./lspsaga.vim
 runtime ./trouble.vim
 runtime ./gitsigns.vim
 runtime ./lualine.vim
+lua << EOF
+  require('autopairs')
+  require('autotag')
+EOF
 runtime ./which-key.vim
 runtime ./autocmd.vim
