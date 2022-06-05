@@ -1,4 +1,4 @@
-"------------------------
+"-lua require('telescope.builtin').buffers()-----------------------
 "  vim-plug
 "------------------------
 call plug#begin()
@@ -35,6 +35,7 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'williamboman/nvim-lsp-installer'
 Plug 'ray-x/lsp_signature.nvim'
 Plug 'tami5/lspsaga.nvim'
+Plug 'jose-elias-alvarez/null-ls.nvim'
 
 " cmp
 Plug 'hrsh7th/nvim-cmp'
@@ -57,6 +58,7 @@ Plug 'folke/trouble.nvim'
 
 " telescope
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-lua/plenary.nvim'
 
 " treesitter
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
