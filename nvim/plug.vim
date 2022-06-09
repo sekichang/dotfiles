@@ -1,4 +1,4 @@
-"-lua require('telescope.builtin').buffers()-----------------------
+"------------------------
 "  vim-plug
 "------------------------
 call plug#begin()
@@ -62,6 +62,9 @@ Plug 'nvim-lua/plenary.nvim'
 
 " treesitter
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
+" filer
+Plug 'obaland/vfiler.vim'
 
 Plug 'folke/which-key.nvim'
 Plug 'kevinhwang91/nvim-hlslens'
