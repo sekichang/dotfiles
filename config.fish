@@ -2,6 +2,8 @@ set fish_greeting ""
 
 set -gx TERM xterm-256color
 
+set -gx EDITOR nvim
+
 # alias
 balias ls 'exa -h'
 balias ll 'ls -l --icons --time-style iso'
