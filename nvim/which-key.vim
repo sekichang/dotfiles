@@ -81,7 +81,8 @@ local opts = {
 
 local mappings = {
   ["a"] = { "<cmd>Alpha<cr>", "Alpha" },
-  ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
+  ["e"] = { "<cmd>VFiler<cr>", "Filer" },
+  ["E"] = { "<cmd>VFiler -auto-cd -auto-resize -keep -layout=left -name=explorer -width=30 -columns=indent,icon,name,git<cr>", "Explorer" },
   ["w"] = { "<cmd>w!<CR>", "Save" },
   ["q"] = { "<cmd>q!<CR>", "Quit" },
   ["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
