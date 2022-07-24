@@ -1,61 +1,19 @@
 lua << EOF
-local lspsaga = require 'lspsaga'
-lspsaga.setup { -- defaults ...
-  debug = false,
-  use_saga_diagnostic_sign = true,
-  -- diagnostic sign
-  error_sign = "",
-  warn_sign = "",
-  hint_sign = "",
-  infor_sign = "",
-  diagnostic_header_icon = "   ",
-  -- code action title icon
-  code_action_icon = " ",
-  code_action_prompt = {
-    enable = false,
-    sign = true,
-    sign_priority = 40,
-    virtual_text = true,
-  },
-  finder_definition_icon = "  ",
-  finder_reference_icon = "  ",
-  max_preview_lines = 10,
-  finder_action_keys = {
-    open = "o",
-    vsplit = "s",
-    split = "i",
-    quit = "q",
-    scroll_down = "<C-f>",
-    scroll_up = "<C-b>",
-  },
-  code_action_keys = {
-    quit = "q",
-    exec = "<CR>",
-  },
-  rename_action_keys = {
-    quit = "<C-c>",
-    exec = "<CR>",
-  },
-  definition_preview_icon = "  ",
-  border_style = "single",
-  rename_prompt_prefix = "➤",
-  rename_output_qflist = {
-    enable = false,
-    auto_open_qflist = false,
-  },
-  server_filetype_map = {},
-  diagnostic_prefix_format = "%d. ",
-  diagnostic_message_format = "%m %c",
-  highlight_prefix = false,
-}
---- In lsp attach function
-local map = vim.api.nvim_buf_set_keymap
-local opts = { noremap = true, silent = true }
-map(0, "n", "gx", "<cmd>Lspsaga code_action<cr>", opts)
-map(0, "x", "gx", ":<c-u>Lspsaga range_code_action<cr>", opts)
-map(0, "n", "K",  "<cmd>Lspsaga hover_doc<cr>", opts)
-map(0, "n", "go", "<cmd>Lspsaga show_line_diagnostics<cr>", opts)
-map(0, "n", "gj", "<cmd>Lspsaga diagnostic_jump_next<cr>", opts)
-map(0, "n", "gk", "<cmd>Lspsaga diagnostic_jump_prev<cr>", opts)
-map(0, "n", "gr", "<cmd>Lspsaga rename<cr>", opts)
+local saga = require 'lspsaga'
+
+-- use custom config
+saga.init_lsp_saga({
+  code_action_icon = "",
+})
+
+opts = { silent = true, noremap = true }
+vim.keymap.set("n", "gh", "<cmd>Lspsaga lsp_finder<CR>", opts)
+vim.keymap.set("n", "<space>ca", "<cmd>Lspsaga code_action<CR>", opts)
+vim.keymap.set("v", "<space>ca", "<cmd><C-U>Lspsaga range_code_action<CR>", opts)
+vim.keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>", { silent = true })
+
+vim.keymap.set("n", "gs", require("lspsaga.signaturehelp").signature_help, opts)
+vim.keymap.set("n", "gr", require("lspsaga.rename").lsp_rename, opts)
+vim.keymap.set("n", "gd", require("lspsaga.definition").preview_definition, opts)
+
 EOF

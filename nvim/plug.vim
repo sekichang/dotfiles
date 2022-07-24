@@ -34,7 +34,7 @@ Plug 'olimorris/onedarkpro.nvim'
 Plug 'neovim/nvim-lspconfig'
 Plug 'williamboman/nvim-lsp-installer'
 Plug 'ray-x/lsp_signature.nvim'
-Plug 'tami5/lspsaga.nvim'
+Plug 'glepnir/lspsaga.nvim', { 'branch': 'main' }
 Plug 'jose-elias-alvarez/null-ls.nvim'
 
 " cmp
