@@ -81,8 +81,8 @@ local opts = {
 
 local mappings = {
   ["a"] = { "<cmd>Alpha<cr>", "Alpha" },
-  ["e"] = { "<cmd>VFiler<cr>", "Filer" },
-  ["E"] = { "<cmd>VFiler -auto-cd -auto-resize -keep -layout=left -name=explorer -width=30 -columns=indent,icon,name,git<cr>", "Explorer" },
+  ["e"] = { "<cmd>VFiler -columns=indent,icon,devicons,name,git,mode,size,time<cr>", "Filer" },
+  ["E"] = { "<cmd>VFiler -auto-cd -auto-resize -keep -layout=left -name=explorer -width=30 -columns=indent,icon,devicons,name,git<cr>", "Explorer" },
   ["w"] = { "<cmd>w!<CR>", "Save" },
   ["q"] = { "<cmd>q!<CR>", "Quit" },
 --  ["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
