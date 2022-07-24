@@ -85,7 +85,7 @@ local mappings = {
   ["E"] = { "<cmd>VFiler -auto-cd -auto-resize -keep -layout=left -name=explorer -width=30 -columns=indent,icon,name,git<cr>", "Explorer" },
   ["w"] = { "<cmd>w!<CR>", "Save" },
   ["q"] = { "<cmd>q!<CR>", "Quit" },
-  ["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
+--  ["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
   ["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
   ["f"] = {
     "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
