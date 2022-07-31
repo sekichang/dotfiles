@@ -26,16 +26,20 @@ local on_attach = function(client, bufnr)
   keymap("n", "<space>F" , "<cmd>lua vim.lsp.buf.formatting()<CR>"                                , opts)
 end
 
-local lsp_installer = require "nvim-lsp-installer"
 local lspconfig = require "lspconfig"
 local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
-lsp_installer.setup()
-for _, server in ipairs(lsp_installer.get_installed_servers()) do
-  lspconfig[server.name].setup {
+--local lsp_installer = require "nvim-lsp-installer"
+local mason = require("mason")
+--lsp_installer.setup()
+mason.setup()
+--for _, server in ipairs(lsp_installer.get_installed_servers()) do
+local mason_lspconfig = require('mason-lspconfig')
+mason_lspconfig.setup_handlers({ function(server_name)
+  lspconfig[server_name].setup {
     on_attach = on_attach,
     capabilities = capabilities
   }
-end
+end})
 require "lsp_signature".setup({
   bind = true,
   handler_opts = {
