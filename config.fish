@@ -6,7 +6,7 @@ set -gx EDITOR nvim
 
 # alias
 balias ls 'exa -h'
-balias ll 'ls -l --icons --time-style iso'
+balias ll 'ls -l --git --icons --time-style iso'
 balias la 'ls -a --icons'
 balias lla 'll -a'
 balias cat bat
