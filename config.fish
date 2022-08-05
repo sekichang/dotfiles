@@ -5,19 +5,23 @@ set -gx TERM xterm-256color
 set -gx EDITOR nvim
 
 # alias
-balias ls 'exa -h'
-balias ll 'ls -l --git --icons --time-style iso'
-balias la 'ls -a --icons'
-balias lla 'll -a'
-balias cat bat
-balias g git
+alias vi nvim
+if type -q exa
+  balias ls 'exa -h'
+  balias ll 'ls -l --git --icons --time-style iso'
+  balias la 'ls -a --icons'
+  balias lla 'll -a'
+end
+if type -q bat
+  balias cat bat
+end
+abbr g git
 abbr -a ga 'git add'
 abbr -a gco 'git commit'
 abbr -a gch 'git checkout'
 abbr -a gd 'git diff'
 abbr -a gs 'git status'
-balias d docker
-alias vi nvim
+abbr d docker
 
 
 # volta PATH
