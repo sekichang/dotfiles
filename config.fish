@@ -5,7 +5,7 @@ set -gx TERM xterm-256color
 set -gx EDITOR nvim
 
 # alias
-alias vi nvim
+balias vi nvim
 if type -q exa
   balias ls 'exa -h'
   balias ll 'ls -l --git --icons --time-style iso'
