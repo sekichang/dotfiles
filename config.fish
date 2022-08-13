@@ -5,7 +5,9 @@ set -gx TERM xterm-256color
 set -gx EDITOR nvim
 
 # alias
-balias vi nvim
+if type -q nvim
+  balias vi nvim
+end
 if type -q exa
   balias ls 'exa -h'
   balias ll 'ls -l --git --icons --time-style iso'
@@ -15,8 +17,14 @@ end
 if type -q bat
   balias cat bat
 end
+if type -q gawk
+  balias awk gawk
+end
+if type -q gsed
+  balias sed gsed
+end
 abbr g git
-abbr -a ga 'git add'
+abbr -a ga __fzf_git_add
 abbr -a gco 'git commit'
 abbr -a gch 'git checkout'
 abbr -a gd 'git diff'
