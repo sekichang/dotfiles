@@ -74,4 +74,7 @@ Plug 'kevinhwang91/nvim-hlslens'
 Plug 'windwp/nvim-autopairs'
 Plug 'windwp/nvim-ts-autotag'
 
+" tab
+Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' }
+
 call plug#end()
