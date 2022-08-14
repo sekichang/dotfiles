@@ -77,4 +77,7 @@ Plug 'windwp/nvim-ts-autotag'
 " tab
 Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' }
 
+"
+Plug 'norcalli/nvim-colorizer.lua'
+
 call plug#end()
