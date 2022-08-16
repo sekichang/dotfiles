@@ -12,7 +12,5 @@ runtime ./trouble.vim
 runtime ./gitsigns.vim
 runtime ./galaxyline.vim
 "runtime ./bufferline.vim.vim
-runtime ./autopairs.vim
-runtime ./autotag.vim
 runtime ./which-key.vim
 runtime ./autocmd.vim
