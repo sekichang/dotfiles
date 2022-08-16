@@ -64,6 +64,7 @@ Plug 'nvim-lua/plenary.nvim'
 
 " treesitter
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-telescope/telescope-file-browser.nvim'
 
 " filer
 Plug 'obaland/vfiler.vim'
