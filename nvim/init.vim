@@ -1,7 +1,6 @@
 runtime ./options.vim
 runtime ./keymap.vim
 runtime ./plug.vim
-runtime ./colorscheme.vim
 runtime ./lspconfig.vim
 runtime ./cmp.vim
 runtime ./telescope.vim
@@ -11,6 +10,5 @@ runtime ./lspsaga.vim
 runtime ./trouble.vim
 runtime ./gitsigns.vim
 runtime ./galaxyline.vim
-"runtime ./bufferline.vim.vim
 runtime ./which-key.vim
 runtime ./autocmd.vim
