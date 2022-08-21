@@ -1,13 +1,4 @@
 runtime ./options.vim
 runtime ./keymap.vim
 runtime ./plug.vim
-runtime ./lspconfig.vim
-runtime ./cmp.vim
-runtime ./telescope.vim
-runtime ./treesitter.vim
-runtime ./lspsaga.vim
-"runtime ./null-ls.vim
-runtime ./gitsigns.vim
-runtime ./galaxyline.vim
-runtime ./which-key.vim
 runtime ./autocmd.vim
