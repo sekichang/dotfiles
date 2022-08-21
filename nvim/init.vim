@@ -7,7 +7,6 @@ runtime ./telescope.vim
 runtime ./treesitter.vim
 runtime ./lspsaga.vim
 "runtime ./null-ls.vim
-runtime ./trouble.vim
 runtime ./gitsigns.vim
 runtime ./galaxyline.vim
 runtime ./which-key.vim
