@@ -33,8 +33,7 @@ return packer.startup(function()
   use 'wbthomason/packer.nvim'
 
   -- LSP
---  use 'williamboman/nvim-lsp-installer'
---  use 'neovim/nvim-lspconfig'
+  use 'neovim/nvim-lspconfig'
 
   -- cmp
   use 'hrsh7th/cmp-nvim-lsp'
@@ -58,6 +57,16 @@ return packer.startup(function()
 
   -- Colorschemes
   use 'lunarvim/darkplus.nvim'
+
+  use {
+	  'windwp/nvim-autopairs',
+    config = function() require('nvim-autopairs').setup {} end
+  }
+
+  use {
+    'windwp/nvim-ts-autotag',
+    config = function() require('nvim-ts-autotag').setup {} end
+  }
 
   if packer_bootstrap then
     require('packer').sync()

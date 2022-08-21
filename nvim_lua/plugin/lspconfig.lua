@@ -1,44 +1,39 @@
 local status_ok, _ = pcall(require, "lspconfig")
-print(status_ok)
+
 if not status_ok then
   print(status_ok)
   return
 end
 
-local opts = { noremap = true, silent = true }
---vim.api.nvim_set_keymap('n', '<space>e', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
---vim.api.nvim_set_keymap('n', '[d'      , '<cmd>lua vim.diagnostic.goto_prev()<CR>' , opts)
---vim.api.nvim_set_keymap('n', ']d'      , '<cmd>lua vim.diagnostic.goto_next()<CR>' , opts)
---vim.api.nvim_set_keymap('n', '<space>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
-
 local on_attach = function(client, bufnr)
   -- Enable completion triggered by <c-x><c-o>
-  -- vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+  vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
   -- Mappings.
-  local keymap = vim.api.nvim_buf_set_keymap
-  keymap(bufnr, 'n', 'gD'       , '<cmd>lua vim.lsp.buf.declaration()<CR>'            , opts)
-  keymap(bufnr, 'n', 'gd'       , '<cmd>lua vim.lsp.buf.definition()<CR>'             , opts)
-  keymap(bufnr, 'n', 'K'        , '<cmd>lua vim.lsp.buf.hover()<CR>'                  , opts)
-  keymap(bufnr, 'n', 'gi'       , '<cmd>lua vim.lsp.buf.implementation()<CR>'         , opts)
-  keymap(bufnr, 'n', '<C-k>'    , '<cmd>lua vim.lsp.buf.signature_help()<CR>'         , opts)
-  keymap(bufnr, 'n', '<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>'   , opts)
-  keymap(bufnr, 'n', '<space>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
-  keymap(bufnr, 'n', '<space>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
-  keymap(bufnr, 'n', '<space>D' , '<cmd>lua vim.lsp.buf.type_definition()<CR>'        , opts)
-  keymap(bufnr, 'n', '<space>rn', '<cmd>lua vim.lsp.buf.rename()<CR>'                 , opts)
-  keymap(bufnr, 'n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>'            , opts)
-  keymap(bufnr, 'n', 'gr'       , '<cmd>lua vim.lsp.buf.references()<CR>'             , opts)
-  keymap(bufnr, 'n', '<space>f' , '<cmd>lua vim.lsp.buf.formatting()<CR>'             , opts)
+  -- See `:help vim.lsp.*` for documentation on any of the below functions
+  local bufopts = { noremap=true, silent=true, buffer=bufnr }
+  vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
+  vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
+  vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
+  vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
+  vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
+  vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, bufopts)
+  vim.keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, bufopts)
+  vim.keymap.set('n', '<space>wl', function()
+    print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+  end, bufopts)
+  vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, bufopts)
+  vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts)
+  vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
+  vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
+  vim.keymap.set('n', '<space>f', vim.lsp.buf.formatting, bufopts)
 end
 
-
-local servers = { 'sumneko_lua', 'tsserver' }
-
---for _, lsp in ipairs(servers) do
---for _, lsp in pairs(servers) do
---  lspconfig[lsp].setup {
---    on_attach = on_attach,
---    --capabilities = capabilities,
---  }
---end
+local lsp_flags = {
+  -- This is the default in Nvim 0.7+
+  debounce_text_changes = 150,
+}
+require('lspconfig')['tsserver'].setup{
+    on_attach = on_attach,
+    flags = lsp_flags,
+}
