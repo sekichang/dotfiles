@@ -76,7 +76,8 @@ Plug 'windwp/nvim-autopairs'
 Plug 'windwp/nvim-ts-autotag'
 
 " tab
-Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' }
+"Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' }
+Plug 'romgrk/barbar.nvim'
 
 "
 Plug 'norcalli/nvim-colorizer.lua'
