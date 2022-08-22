@@ -4,7 +4,7 @@ if (not status_ok) then return end
 
 onedarkpro.setup({
   styles = {
-    comments = "italic",
+    comments = "NONE",
     functions = "NONE",
     keywords = "NONE",
     strings = "NONE",
