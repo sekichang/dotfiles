@@ -82,4 +82,6 @@ Plug 'romgrk/barbar.nvim'
 "
 Plug 'norcalli/nvim-colorizer.lua'
 
+Plug 'iamcco/markdown-preview.nvim', { 'for': ['markdown'], 'do': 'cd app & npm install' }
+
 call plug#end()
