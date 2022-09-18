@@ -32,12 +32,11 @@ Plug 'olimorris/onedarkpro.nvim'
 
 " lsp
 Plug 'neovim/nvim-lspconfig'
-"Plug 'williamboman/nvim-lsp-installer'
 Plug 'williamboman/mason.nvim'
 Plug 'williamboman/mason-lspconfig.nvim'
 Plug 'ray-x/lsp_signature.nvim'
 Plug 'glepnir/lspsaga.nvim', { 'branch': 'main' }
-Plug 'jose-elias-alvarez/null-ls.nvim'
+"Plug 'jose-elias-alvarez/null-ls.nvim'
 
 " cmp
 Plug 'hrsh7th/nvim-cmp'
@@ -49,7 +48,7 @@ Plug 'saadparwaiz1/cmp_luasnip'
 
 " snipet
 Plug 'L3MON4D3/LuaSnip'
-Plug 'rafamadriz/friendly-snippets'
+"Plug 'rafamadriz/friendly-snippets'
 
 " icon
 Plug 'onsails/lspkind.nvim'
