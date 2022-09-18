@@ -33,46 +33,46 @@ return packer.startup(function()
   use 'wbthomason/packer.nvim'
 
   -- LSP
-  use 'neovim/nvim-lspconfig'
+--  use 'neovim/nvim-lspconfig'
 
   -- cmp
-  use 'hrsh7th/cmp-nvim-lsp'
-  use 'hrsh7th/cmp-buffer'
-  use 'hrsh7th/cmp-path'
-  use 'hrsh7th/cmp-cmdline'
-  use 'hrsh7th/nvim-cmp'
+--  use 'hrsh7th/cmp-nvim-lsp'
+--  use 'hrsh7th/cmp-buffer'
+--  use 'hrsh7th/cmp-path'
+--  use 'hrsh7th/cmp-cmdline'
+--  use 'hrsh7th/nvim-cmp'
 
   -- snipet
-  use 'L3MON4D3/LuaSnip'
-  use 'saadparwaiz1/cmp_luasnip'
+--  use 'L3MON4D3/LuaSnip'
+--  use 'saadparwaiz1/cmp_luasnip'
 
   -- treesitter
-  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+--  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 
   -- telescope
-  use {
-    'nvim-telescope/telescope.nvim', tag = '0.1.0',
-    requires = { {'nvim-lua/plenary.nvim'} }
-  }
+--  use {
+--    'nvim-telescope/telescope.nvim', tag = '0.1.0',
+--    requires = { {'nvim-lua/plenary.nvim'} }
+--  }
 
   -- gitsigns
-  use {
-    'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' },
-    config = function() require('gitsigns').setup() end
-  }
+--  use {
+--    'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' },
+--    config = function() require('gitsigns').setup() end
+--  }
 
   -- Colorschemes
-  use 'lunarvim/darkplus.nvim'
+--  use 'lunarvim/darkplus.nvim'
 
-  use {
-	  'windwp/nvim-autopairs',
-    config = function() require('nvim-autopairs').setup {} end
-  }
+--  use {
+--	  'windwp/nvim-autopairs',
+--    config = function() require('nvim-autopairs').setup {} end
+--  }
 
-  use {
-    'windwp/nvim-ts-autotag',
-    config = function() require('nvim-ts-autotag').setup {} end
-  }
+--  use {
+--    'windwp/nvim-ts-autotag',
+--    config = function() require('nvim-ts-autotag').setup {} end
+--  }
 
   if packer_bootstrap then
     require('packer').sync()
