@@ -28,11 +28,8 @@ end
 
 local lspconfig = require "lspconfig"
 local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
---local lsp_installer = require "nvim-lsp-installer"
 local mason = require("mason")
---lsp_installer.setup()
 mason.setup()
---for _, server in ipairs(lsp_installer.get_installed_servers()) do
 local mason_lspconfig = require('mason-lspconfig')
 mason_lspconfig.setup_handlers({ function(server_name)
   lspconfig[server_name].setup {
