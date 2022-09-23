@@ -24,3 +24,8 @@ nnoremap - <C-x>
 nnoremap x "_x
 nnoremap s "_s
 
+" 行を移動
+nnoremap <silent><A-j> :move .+1<CR>==
+nnoremap <silent><A-k> :move .-2<CR>==
+xnoremap <silent><A-j> :move '>+1<CR>gv=gv
+xnoremap <silent><A-k> :move '<-2<CR>gv=gv
