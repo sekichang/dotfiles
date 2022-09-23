@@ -16,8 +16,16 @@ local fb_actions = require "telescope".extensions.file_browser.actions
 telescope.setup {
   defaults = {
     mappings = {
-      n = {
-        ["q"] = actions.close
+      i = {
+        ["<C-n>"] = actions.cycle_history_next,
+        ["<C-p>"] = actions.cycle_history_prev,
+        ["<C-j>"] = actions.move_selection_next,
+        ["<C-k>"] = actions.move_selection_previous,
+        ["<C-_>"] = actions.which_key, -- keys from pressing <C-/>
+      },
+     n = {
+        ["q"] = actions.close,
+        ["?"] = actions.which_key,
       },
     },
   },
