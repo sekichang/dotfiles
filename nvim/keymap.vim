@@ -2,10 +2,10 @@
 "  keymap
 "-------------------------
 "insert modeでの移動
-:imap <c-h> <Left>
-:imap <c-j> <Down>
-:imap <c-k> <Up>
-:imap <c-l> <Right>
+inoremap <C-h> <Left>
+inoremap <C-j> <Down>
+inoremap <C-k> <Up>
+inoremap <C-l> <Right>
 
 " 次（前）の検索候補を画面中央に表示する
 nnoremap n nzz
@@ -27,5 +27,7 @@ nnoremap s "_s
 " 行を移動
 nnoremap <silent><A-j> :move .+1<CR>==
 nnoremap <silent><A-k> :move .-2<CR>==
-xnoremap <silent><A-j> :move '>+1<CR>gv=gv
-xnoremap <silent><A-k> :move '<-2<CR>gv=gv
+vnoremap <silent><A-j> :move '>+1<CR>gv=gv
+vnoremap <silent><A-k> :move '<-2<CR>gv=gv
+
+vnoremap p "_dP
