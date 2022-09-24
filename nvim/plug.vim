@@ -36,7 +36,7 @@ Plug 'williamboman/mason.nvim'
 Plug 'williamboman/mason-lspconfig.nvim'
 Plug 'ray-x/lsp_signature.nvim'
 Plug 'glepnir/lspsaga.nvim', { 'branch': 'main' }
-"Plug 'jose-elias-alvarez/null-ls.nvim'
+Plug 'jose-elias-alvarez/null-ls.nvim'
 
 " cmp
 Plug 'hrsh7th/nvim-cmp'
