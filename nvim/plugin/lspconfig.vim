@@ -24,6 +24,10 @@ local on_attach = function(client, bufnr)
 --  keymap("n", "]d"       , "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>"                          , opts)
 --  keymap("n", "<space>q" , "<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>"                        , opts)
 --  keymap("n", "<space>F" , "<cmd>lua vim.lsp.buf.formatting()<CR>"                                , opts)
+
+  if client.name == "tsserver" then
+		client.resolved_capabilities.document_formatting = false
+	end
 end
 
 local lspconfig = require "lspconfig"
@@ -37,6 +41,7 @@ mason_lspconfig.setup_handlers({ function(server_name)
     capabilities = capabilities
   }
 end})
+
 require "lsp_signature".setup({
   bind = true,
   handler_opts = {
