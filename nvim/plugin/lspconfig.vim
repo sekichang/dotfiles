@@ -30,17 +30,48 @@ local on_attach = function(client, bufnr)
 	end
 end
 
-local lspconfig = require "lspconfig"
+local lspconfig = require("lspconfig")
 local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
-local mason = require("mason")
-mason.setup()
+local opts = { capabilities = capabilities, on_attach = on_attach }
+
+require("mason").setup()
 local mason_lspconfig = require('mason-lspconfig')
-mason_lspconfig.setup_handlers({ function(server_name)
-  lspconfig[server_name].setup {
-    on_attach = on_attach,
-    capabilities = capabilities
-  }
-end})
+mason_lspconfig.setup_handlers({
+  function(server_name)
+    lspconfig[server_name].setup {
+      on_attach = on_attach,
+      capabilities = capabilities
+    }
+  end,
+  ["sumneko_lua"] = function()
+	  local has_lua_dev, lua_dev = pcall(require, "lua-dev")
+    if has_lua_dev then
+      local l = lua_dev.setup({
+        library = {
+          vimruntime = true, -- runtime path
+          types = true, -- full signature, docs and completion of vim.api, vim.treesitter, vim.lsp and others
+          -- plugins = false, -- installed opt or start plugins in packpath
+          -- you can also specify the list of plugins to make available as a workspace library
+          -- plugins = { "nvim-treesitter", "plenary.nvim", "telescope.nvim" },
+          plugins = { "nvim-treesitter", "plenary.nvim" },
+        },
+        runtime_path = false,
+        lspconfig = opts,
+      })
+      lspconfig.sumneko_lua.setup(l)
+    else
+      lspconfig.sumneko_lua.setup({
+        settings = {
+          Lua = {
+            diagnostics = {
+              globals = { "vim" },
+            },
+          },
+        },
+      })
+    end
+  end,
+})
 
 require "lsp_signature".setup({
   bind = true,
@@ -51,10 +82,10 @@ require "lsp_signature".setup({
   use_lspsaga = true
 })
 vim.cmd [[
-set updatetime=500
-highlight LspReferenceText  cterm=underline ctermfg=1 ctermbg=8 gui=underline guifg=#A00000 guibg=#104040
-highlight LspReferenceRead  cterm=underline ctermfg=1 ctermbg=8 gui=underline guifg=#A00000 guibg=#104040
-highlight LspReferenceWrite cterm=underline ctermfg=1 ctermbg=8 gui=underline guifg=#A00000 guibg=#104040
+set updatetime=1000
+highlight LspReferenceText  cterm=underline ctermfg=1 ctermbg=8 gui=underline guifg=#A00000 guibg=#108040
+highlight LspReferenceRead  cterm=underline ctermfg=1 ctermbg=8 gui=underline guifg=#A00000 guibg=#108040
+highlight LspReferenceWrite cterm=underline ctermfg=1 ctermbg=8 gui=underline guifg=#A00000 guibg=#108040
 augroup lsp_document_highlight
   autocmd!
   autocmd CursorHold,CursorHoldI * lua vim.lsp.buf.document_highlight()
