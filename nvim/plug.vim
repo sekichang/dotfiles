@@ -84,4 +84,5 @@ Plug 'norcalli/nvim-colorizer.lua'
 Plug 'iamcco/markdown-preview.nvim', { 'for': ['markdown'], 'do': 'cd app & npm install' }
 
 Plug 'phaazon/hop.nvim'
+Plug 'hrsh7th/vim-searchx'
 call plug#end()
