@@ -26,8 +26,9 @@ local on_attach = function(client, bufnr)
 --  keymap("n", "<space>F" , "<cmd>lua vim.lsp.buf.formatting()<CR>"                                , opts)
 
   if client.name == "tsserver" then
-		client.resolved_capabilities.document_formatting = false
-	end
+    client.server_capabilities.documentFormattingProvider = false
+    client.server_capabilities.documentRangeFormattingProvider = false
+  end
 end
 
 local lspconfig = require("lspconfig")
@@ -68,6 +69,10 @@ mason_lspconfig.setup_handlers({
             },
           },
         },
+        on_attach = function(client)
+          client.server_capabilities.documentFormattingProvider = false
+          client.server_capabilities.documentRangeFormattingProvider = false
+        end,
       })
     end
   end,
