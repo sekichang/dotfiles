@@ -1,17 +1,20 @@
+vim.cmd [[
 let mapleader = "\<Space>"
+]]
 
-lua << EOF
 local status, telescope = pcall(require, "telescope")
-if (not status) then return end
-
-local actions = require('telescope.actions')
-local builtin = require("telescope.builtin")
-
-local function telescope_buffer_dir()
-  return vim.fn.expand('%:p:h')
+if not status then
+  return
 end
 
-local fb_actions = require "telescope".extensions.file_browser.actions
+local actions = require "telescope.actions"
+local builtin = require "telescope.builtin"
+
+local function telescope_buffer_dir()
+  return vim.fn.expand "%:p:h"
+end
+
+local fb_actions = require("telescope").extensions.file_browser.actions
 
 telescope.setup {
   defaults = {
@@ -23,7 +26,7 @@ telescope.setup {
         ["<C-k>"] = actions.move_selection_previous,
         ["<C-_>"] = actions.which_key, -- keys from pressing <C-/>
       },
-     n = {
+      n = {
         ["q"] = actions.close,
         ["?"] = actions.which_key,
       },
@@ -37,24 +40,26 @@ telescope.setup {
       mappings = {
         -- your custom insert mode mappings
         ["i"] = {
-          ["<C-w>"] = function() vim.cmd('normal vbd') end,
+          ["<C-w>"] = function()
+            vim.cmd "normal vbd"
+          end,
         },
         ["n"] = {
           -- your custom normal mode mappings
           ["N"] = fb_actions.create,
           ["h"] = fb_actions.goto_parent_dir,
           ["/"] = function()
-            vim.cmd('startinsert')
-          end
+            vim.cmd "startinsert"
+          end,
         },
       },
     },
   },
 }
-telescope.load_extension("file_browser")
+telescope.load_extension "file_browser"
 
 vim.keymap.set("n", "<space>f", function()
-  telescope.extensions.file_browser.file_browser({
+  telescope.extensions.file_browser.file_browser {
     path = "%:p:h",
     cwd = telescope_buffer_dir(),
     respect_gitignore = false,
@@ -62,7 +67,6 @@ vim.keymap.set("n", "<space>f", function()
     grouped = true,
     previewer = false,
     initial_mode = "normal",
-    layout_config = { height = 40 }
-  })
+    layout_config = { height = 40 },
+  }
 end)
-EOF

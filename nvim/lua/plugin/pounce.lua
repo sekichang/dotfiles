@@ -1,11 +1,11 @@
-lua << EOF
-require'pounce'.setup{
+require("pounce").setup {
   accept_keys = "JFKDLSAHGNUVRBYTMICEOXWPQZ",
   accept_best_key = "<enter>",
   multi_window = true,
   debug = false,
 }
-EOF
+
+vim.cmd [[
 nmap s <cmd>Pounce<CR>
 nmap S <cmd>PounceRepeat<CR>
 vmap s <cmd>Pounce<CR>
@@ -16,3 +16,4 @@ highlight PounceGap        cterm=underline,bold ctermfg=gray ctermbg=209 gui=und
 highlight PounceAccept     cterm=underline,bold ctermfg=214 ctermbg=gray gui=underline,bold guifg=#00ccff guibg=#333333
 highlight PounceAcceptBest cterm=underline,bold ctermfg=196 ctermbg=gray gui=underline,bold guifg=#ff33ff guibg=#333333
 highlight PounceUnmatched  ctermfg=248 guifg=#666666
+]]

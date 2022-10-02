@@ -1,13 +1,13 @@
-lua << EOF
-local saga = require 'lspsaga'
+local saga = require "lspsaga"
 local keymap = vim.keymap.set
+local diagnostic = vim.diagnostic
 
 -- use custom config
-saga.init_lsp_saga({
+saga.init_lsp_saga {
   code_action_icon = "",
-})
+}
 
-opts = { silent = true }
+local opts = { silent = true }
 
 -- Lsp finder
 keymap("n", "gh", "<cmd>Lspsaga lsp_finder<CR>", opts)
@@ -34,16 +34,14 @@ keymap("n", "]e", "<cmd>Lspsaga diagnostic_jump_next<CR>", opts)
 
 -- Only jump to error
 keymap("n", "[E", function()
-  require("lspsaga.diagnostic").goto_prev({ severity = vim.diagnostic.severity.ERROR })
-end, { silent = true })
+  require("lspsaga.diagnostic").goto_prev { severity = diagnostic.severity.ERROR }
+end, opts)
 keymap("n", "]E", function()
-  require("lspsaga.diagnostic").goto_next({ severity = vim.diagnostic.severity.ERROR })
-end, { silent = true })
+  require("lspsaga.diagnostic").goto_next { severity = diagnostic.severity.ERROR }
+end, opts)
 
 -- Outline
-keymap("n","<leader>o", "<cmd>LSoutlineToggle<CR>", opts)
+keymap("n", "<leader>o", "<cmd>LSoutlineToggle<CR>", opts)
 
 -- Hover Doc
 keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts)
-
-EOF
