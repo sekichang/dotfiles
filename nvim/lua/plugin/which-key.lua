@@ -167,6 +167,7 @@ local mappings = {
   p = {
     name = "Plug",
     c = { "<cmd>PlugClean<cr>", "Clean" },
+    d = { "<cmd>PlugDiff<cr>", "Diff" },
     i = { "<cmd>PlugInstall<cr>", "Install" },
     s = { "<cmd>PlugStatus<cr>", "Status" },
     u = { "<cmd>PlugUpdate<cr>", "Update" },
