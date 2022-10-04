@@ -13,14 +13,13 @@ local opts = { silent = true }
 keymap("n", "gh", "<cmd>Lspsaga lsp_finder<CR>", opts)
 
 -- Code action
-keymap("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", opts)
-keymap("v", "<leader>ca", "<cmd><C-U>Lspsaga range_code_action<CR>", opts)
+keymap({ "n", "v" }, "<leader>ca", "<cmd>Lspsaga code_action<CR>", opts)
 
 -- Rename
 keymap("n", "gr", "<cmd>Lspsaga rename<CR>", opts)
 
 -- Definition preview
-keymap("n", "gd", "<cmd>Lspsaga preview_definition<CR>", opts)
+keymap("n", "gd", "<cmd>Lspsaga peek_definition<CR>", opts)
 
 -- Show line diagnostics
 keymap("n", "<leader>cd", "<cmd>Lspsaga show_line_diagnostics<CR>", opts)
@@ -28,7 +27,7 @@ keymap("n", "<leader>cd", "<cmd>Lspsaga show_line_diagnostics<CR>", opts)
 -- Show cursor diagnostic
 --keymap("n", "<leader>cd", "<cmd>Lspsaga show_cursor_diagnostics<CR>", opts)
 
--- Diagnsotic jump
+-- Diagnsotic jump can use `<c-o>` to jump back
 keymap("n", "[e", "<cmd>Lspsaga diagnostic_jump_prev<CR>", opts)
 keymap("n", "]e", "<cmd>Lspsaga diagnostic_jump_next<CR>", opts)
 
