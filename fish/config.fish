@@ -23,10 +23,13 @@ end
 if type -q gsed
   balias sed gsed
 end
+balias mkdir 'mkdir -p'
+balias ... 'cd ../..'
+balias .... 'cd ../../..'
 abbr g git
 abbr -a ga __fzf_git_add
-abbr -a gco 'git commit'
-abbr -a gch 'git checkout'
+abbr -a gc 'git commit'
+abbr -a gco 'git checkout'
 abbr -a gd 'git diff'
 abbr -a gs 'git status'
 abbr d docker
