@@ -5,6 +5,24 @@ local diagnostic = vim.diagnostic
 -- use custom config
 saga.init_lsp_saga {
   code_action_icon = "",
+  rename_action_quit = "<ESC>",
+  finder_action_keys = {
+    open = "o",
+    vsplit = "s",
+    split = "i",
+    tabe = "t",
+    quit = "q",
+  },
+  code_action_keys = {
+    quit = "q",
+    exec = "<CR>",
+  },
+  definition_action_keys = {
+    edit = "<CR>",
+    vsplit = "s",
+    tabe = "t",
+    quit = "q",
+  },
 }
 
 local opts = { silent = true }
