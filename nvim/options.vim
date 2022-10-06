@@ -36,4 +36,4 @@ set updatetime=100 " 反映されるまでの時間(1s)
 "------------------------
 " indentLine
 "------------------------
-let g:indentLine_fileTypeExclude = ['help', 'markdown']
+"let g:indentLine_fileTypeExclude = ['help', 'markdown']

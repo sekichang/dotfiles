@@ -10,7 +10,8 @@ call plug#begin()
 Plug 'NTBBloodbath/galaxyline.nvim'
 
 " インデントの可視化
-Plug 'Yggdroot/indentLine'
+"Plug 'Yggdroot/indentLine'
+Plug 'lukas-reineke/indent-blankline.nvim'
 
 " Git差分表示
 "Plug 'airblade/vim-gitgutter'
