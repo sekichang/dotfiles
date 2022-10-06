@@ -5,7 +5,7 @@ local on_attach = function(client, bufnr)
   end
 
   -- LSPサーバーのフォーマット機能を無効にする
-  -- client.resolved_capabilities.document_formatting = false
+  client.server_capabilities.documentFormattingProvider = false
 
   local opts = { noremap = true, silent = true }
   keymap("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
@@ -25,11 +25,6 @@ local on_attach = function(client, bufnr)
   --  keymap("n", "]d"       , "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>"                          , opts)
   --  keymap("n", "<space>q" , "<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>"                        , opts)
   --  keymap("n", "<space>F" , "<cmd>lua vim.lsp.buf.formatting()<CR>"                                , opts)
-
-  if client.name == "tsserver" then
-    client.server_capabilities.documentFormattingProvider = false
-    client.server_capabilities.documentRangeFormattingProvider = false
-  end
 end
 
 local lspconfig = require "lspconfig"
@@ -70,10 +65,6 @@ mason_lspconfig.setup_handlers {
             },
           },
         },
-        on_attach = function(client)
-          client.server_capabilities.documentFormattingProvider = false
-          client.server_capabilities.documentRangeFormattingProvider = false
-        end,
       }
     end
   end,
@@ -87,14 +78,15 @@ require("lsp_signature").setup {
   max_width = 120,
   use_lspsaga = true,
 }
---vim.cmd [[
---set updatetime=1000
---highlight LspReferenceText  cterm=underline ctermfg=1 ctermbg=8 gui=underline guifg=#A00000 guibg=#108040
---highlight LspReferenceRead  cterm=underline ctermfg=1 ctermbg=8 gui=underline guifg=#A00000 guibg=#108040
---highlight LspReferenceWrite cterm=underline ctermfg=1 ctermbg=8 gui=underline guifg=#A00000 guibg=#108040
---augroup lsp_document_highlight
---  autocmd!
---  autocmd CursorHold,CursorHoldI * lua vim.lsp.buf.document_highlight()
---  autocmd CursorMoved,CursorMovedI * lua vim.lsp.buf.clear_references()
---augroup END
---]]
+vim.cmd [[
+set updatetime=1000
+let s:bl = ['json', 'markdown'] " set blacklist filetype
+highlight LspReferenceText  cterm=underline ctermfg=1 ctermbg=8 gui=underline guibg=#555555
+highlight LspReferenceRead  cterm=underline ctermfg=1 ctermbg=8 gui=underline guibg=#555555
+highlight LspReferenceWrite cterm=underline ctermfg=1 ctermbg=8 gui=underline guibg=#555555
+augroup lsp_document_highlight
+  autocmd! * <buffer>
+  autocmd CursorHold,CursorHoldI <buffer> if index(s:bl, &ft) < 0 | lua vim.lsp.buf.document_highlight()
+  autocmd CursorMoved,CursorMovedI <buffer> if index(s:bl, &ft) < 0 | lua vim.lsp.buf.clear_references()
+augroup END
+]]
