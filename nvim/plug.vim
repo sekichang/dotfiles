@@ -87,4 +87,5 @@ Plug 'iamcco/markdown-preview.nvim', { 'for': ['markdown'], 'do': 'cd app & npm 
 Plug 'phaazon/hop.nvim'
 Plug 'hrsh7th/vim-searchx'
 Plug 'rlane/pounce.nvim'
+Plug 'kylechui/nvim-surround'
 call plug#end()
