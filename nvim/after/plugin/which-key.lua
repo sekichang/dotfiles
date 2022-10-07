@@ -80,19 +80,15 @@ local opts = {
 
 local mappings = {
   ["a"] = { "<cmd>Alpha<cr>", "Alpha" },
+  ["d"] = { ":bd<cr>", "Delete" },
   ["e"] = { "<cmd>VFiler -columns=indent,icon,devicons,name,git,mode,size,time<cr>", "Filer" },
   ["E"] = {
     "<cmd>VFiler -auto-cd -auto-resize -keep -layout=left -name=explorer -width=30 -columns=indent,icon,devicons,name,git<cr>",
     "Explorer",
   },
+  ["h"] = { ":HopLine<cr>", "HopLine" },
   ["w"] = { "<cmd>w!<CR>", "Save" },
   ["q"] = { "<cmd>q!<CR>", "Quit" },
-  --  ["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
-  ["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
-  --  ["f"] = {
-  --    "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
-  --    "Find files",
-  --  },
   ["R"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
   ["T"] = { "<cmd>TroubleToggle<cr>", "Trouble" },
 
@@ -103,7 +99,6 @@ local mappings = {
       "Buffers",
     },
     l = { ":Telescope buffers<CR>", "List Buffers" },
-    d = { ":bd<cr>", "Delete" },
     f = { ":Telescope buffers <cr>", "Find" },
     n = { ":bn<cr>", "Next" },
     p = { ":bp<cr>", "Previous" },

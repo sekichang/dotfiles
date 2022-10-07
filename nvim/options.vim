@@ -32,8 +32,3 @@ colorscheme onedarkpro
 "------------------------
 set signcolumn=yes " 常に左端のサイン列を表示
 set updatetime=100 " 反映されるまでの時間(1s)
-
-"------------------------
-" indentLine
-"------------------------
-"let g:indentLine_fileTypeExclude = ['help', 'markdown']
