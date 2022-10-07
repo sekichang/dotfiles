@@ -32,6 +32,7 @@ abbr -a gc 'git commit'
 abbr -a gco 'git checkout'
 abbr -a gd 'git diff'
 abbr -a gs 'git status'
+abbr -a gp 'git push'
 abbr d docker
 
 
