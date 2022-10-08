@@ -17,6 +17,7 @@ set smartcase          "大文字も含めた検索の場合はその通りに�
 set pumheight=10       "補完メニューの高さ
 set pumblend=10        "補完メニューを半透明
 set winblend=10        "floating windows を半透明
+set hidden             "保存しなくても別のファイルを開くことが出来る
 set completeopt=menu,menuone,noselect
 
 if has('nvim')
