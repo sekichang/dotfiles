@@ -26,9 +26,8 @@ Plug 'tpope/vim-fugitive'
 
 " color scheme
 Plug 'cocopon/iceberg.vim'
-"Plug 'sainnhe/sonokai'
-"Plug 'navarasu/onedark.nvim'
-"Plug 'rebelot/kanagawa.nvim'
+Plug 'navarasu/onedark.nvim'
+Plug 'rebelot/kanagawa.nvim'
 Plug 'olimorris/onedarkpro.nvim'
 
 " lsp
@@ -89,4 +88,5 @@ Plug 'phaazon/hop.nvim'
 Plug 'hrsh7th/vim-searchx'
 Plug 'rlane/pounce.nvim'
 Plug 'kylechui/nvim-surround'
+Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
 call plug#end()
