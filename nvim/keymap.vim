@@ -13,11 +13,20 @@ nnoremap <silent><C-j> <C-w>j
 nnoremap <silent><C-k> <C-w>k
 nnoremap <silent><C-l> <C-w>l
 
+" 画面サイズ変更
+nnoremap <silent><A-Up> :resize -2<CR>
+nnoremap <silent><A-Down> :resize +2<CR>
+nnoremap <silent><A-Left> :vertical resize -2<CR>
+nnoremap <silent><A-Right> :vertical resize +2<CR>
+
 " 次（前）の検索候補を画面中央に表示する
 nnoremap n nzz
 nnoremap N Nzz
 nnoremap * *zz
 nnoremap # #zz
+
+" 画面中央に表示する
+nnoremap G Gzz
 
 " ESCを2回押すことでハイライトを消す
 nnoremap <silent><ESC><ESC> :nohlsearch<CR>

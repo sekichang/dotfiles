@@ -15,6 +15,7 @@ if type -q exa
   balias lla 'll -a'
 end
 if type -q bat
+  alias bat 'bat --theme="Monokai Extended"'
   balias cat bat
 end
 if type -q gawk
