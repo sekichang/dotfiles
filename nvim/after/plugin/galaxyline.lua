@@ -191,16 +191,26 @@ gls.left[15] = {
 
 -- Right side
 gls.right[1] = {
-  FileFormat = {
-    provider = function()
-      return vim.bo.filetype
-    end,
+  FileEncode = {
+    provider = "FileEncode",
+    --condition = condition.hide_in_width,
     highlight = { colors.fg, colors.section_bg },
     separator = " ",
     separator_highlight = { colors.section_bg, colors.bg },
   },
 }
 gls.right[2] = {
+  FileFormat = {
+    provider = function()
+      return vim.bo.filetype
+    end,
+    highlight = { colors.fg, colors.section_bg },
+    separator = " | ",
+    -- separator = " ",
+    separator_highlight = { colors.bg, colors.section_bg },
+  },
+}
+gls.right[3] = {
   LineInfo = {
     provider = "LineColumn",
     highlight = { colors.fg, colors.section_bg },
@@ -208,12 +218,12 @@ gls.right[2] = {
     separator_highlight = { colors.bg, colors.section_bg },
   },
 }
-gls.right[3] = {
+gls.right[4] = {
   Time = {
     provider = function()
       return "" .. "  " .. os.date "%H:%M" .. " "
     end,
-    highlight = { colors.bg, colors.green },
+    highlight = { colors.bg, colors.cyan },
     separator = " ",
     separator_highlight = { colors.section_bg, colors.section_bg },
   },
