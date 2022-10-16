@@ -65,3 +65,19 @@ vnoremap > >gv
 " 貼り付け先のインデントに合わせてペースト
 nnoremap p ]p
 nnoremap P ]P
+
+" 行頭/行末へ移動
+cnoremap <C-a> <Home>
+cnoremap <C-e> <End>
+
+" 一文字戻る/一文字進む
+cnoremap <C-b> <Left>
+cnoremap <C-f> <Right>
+
+" delete/backspace
+cnoremap <C-d> <Del>
+cnoremap <C-h> <Bs>
+
+" 前履歴/次履歴
+cnoremap <C-p> <Up>
+cnoremap <C-n> <Down>
