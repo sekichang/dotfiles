@@ -8,7 +8,7 @@ if not status then
 end
 
 local actions = require "telescope.actions"
-local builtin = require "telescope.builtin"
+--local builtin = require "telescope.builtin"
 
 local function telescope_buffer_dir()
   return vim.fn.expand "%:p:h"
