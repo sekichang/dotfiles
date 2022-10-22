@@ -88,5 +88,6 @@ Plug 'phaazon/hop.nvim'
 Plug 'hrsh7th/vim-searchx'
 Plug 'rlane/pounce.nvim'
 Plug 'kylechui/nvim-surround'
+Plug 'petertriho/nvim-scrollbar'
 Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
 call plug#end()
