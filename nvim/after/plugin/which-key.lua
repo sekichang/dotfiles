@@ -87,10 +87,10 @@ local mappings = {
   },
   ["h"] = { "<cmd>HopLine<cr>", "HopLine" },
   ["v"] = { "<cmd>vsplit<CR>", "vsplit" },
-  ["w"] = { "<cmd>w!<CR>", "Save" },
-  ["q"] = { "<cmd>q!<CR>", "Quit" },
+  ["w"] = { "<cmd>w<CR>", "Save" },
+  ["q"] = { "<cmd>q!<CR>", "Quit!" },
   ["r"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
-  ["T"] = { "<cmd>TroubleToggle<cr>", "Trouble" },
+  ["x"] = { "<cmd>TroubleToggle<cr>", "Trouble" },
 
   b = {
     name = "Buffers",
@@ -98,15 +98,17 @@ local mappings = {
       "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
       "Buffers",
     },
-    l = { "<cmd>Telescope buffers<CR>", "List Buffers" },
-    f = { "<cmd>Telescope buffers <cr>", "Find" },
+    l = { "<cmd>Telescope buffers<cr>", "List Buffers" },
     n = { "<cmd>bn<cr>", "Next" },
     p = { "<cmd>bp<cr>", "Previous" },
   },
 
   g = {
     name = "Git",
-    g = { "<cmd>lua _LAZYGIT_TOGGLE()<CR>", "Lazygit" },
+    b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
+    c = { "<cmd>Telescope git_commits<cr>", "Checkout commit" },
+    d = { "<cmd>Gitsigns diffthis HEAD<cr>", "Diff" },
+    f = { "<cmd>Telescope git_files<CR>", "git files" },
     j = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
     k = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },
     l = { "<cmd>lua require 'gitsigns'.blame_line()<cr>", "Blame" },
@@ -116,9 +118,6 @@ local mappings = {
     s = { "<cmd>lua require 'gitsigns'.stage_hunk()<cr>", "Stage Hunk" },
     u = { "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>", "Undo Stage Hunk" },
     o = { "<cmd>Telescope git_status<cr>", "Open changed file" },
-    b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
-    c = { "<cmd>Telescope git_commits<cr>", "Checkout commit" },
-    d = { "<cmd>Gitsigns diffthis HEAD<cr>", "Diff" },
   },
 
   l = {

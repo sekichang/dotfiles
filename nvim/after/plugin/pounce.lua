@@ -5,12 +5,11 @@ require("pounce").setup {
   debug = false,
 }
 
-vim.cmd [[
-nmap s <cmd>Pounce<CR>
-nmap S <cmd>PounceRepeat<CR>
-vmap s <cmd>Pounce<CR>
-omap gs <cmd>Pounce<CR>
+vim.keymap.set("n", "s", "<cmd>Pounce<CR>")
+vim.keymap.set("v", "s", "<cmd>Pounce<CR>")
+vim.keymap.set("o", "gs", "<cmd>Pounce<CR>")
 
+vim.cmd [[
 highlight PounceMatch      cterm=underline,bold ctermfg=gray ctermbg=214 gui=underline,bold guifg=#ffaa00 guibg=#555555
 highlight PounceGap        cterm=underline,bold ctermfg=gray ctermbg=209 gui=underline,bold guifg=#99ff66 guibg=#333333
 highlight PounceAccept     cterm=underline,bold ctermfg=214 ctermbg=gray gui=underline,bold guifg=#00ccff guibg=#333333
