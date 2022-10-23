@@ -1,7 +1,8 @@
 "-------------------------
 "  keymap
 "-------------------------
-"nnoremap <CR> o<ESC>
+" nvim-surround
+nmap S ysiw
 
 "入力モードでのカーソル移動
 inoremap <C-h> <Left>
