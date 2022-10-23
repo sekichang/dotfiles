@@ -12,6 +12,7 @@ null_ls.setup {
       prefer_local = "node_modules/.bin",
     },
     formatting.stylua,
+    formatting.black,
   },
   on_attach = function(client, bufnr)
     if client.supports_method "textDocument/formatting" then
