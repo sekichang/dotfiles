@@ -9,10 +9,11 @@ if type -q nvim
   balias vi nvim
 end
 if type -q exa
-  balias ls 'exa -h'
-  balias ll 'ls -l --git --icons --time-style iso'
-  balias la 'ls -a --icons'
+  balias ls 'exa -h --git --icons'
+  balias la 'ls -a'
+  balias ll 'ls -l --time-style iso'
   balias lla 'll -a'
+  balias lt 'la -T'
 end
 if type -q bat
   alias bat 'bat --theme="Monokai Extended"'
