@@ -90,4 +90,7 @@ Plug 'rlane/pounce.nvim'
 Plug 'kylechui/nvim-surround'
 Plug 'petertriho/nvim-scrollbar'
 Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
+" nui
+Plug 'folke/noice.nvim'
+Plug 'MunifTanjim/nui.nvim'
 call plug#end()
