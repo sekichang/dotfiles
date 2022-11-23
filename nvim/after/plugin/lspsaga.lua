@@ -7,11 +7,11 @@ saga.init_lsp_saga {
   code_action_icon = "",
   rename_action_quit = "<ESC>",
   finder_action_keys = {
-    open = "o",
+    open = { "o", "<CR>" },
     vsplit = "s",
     split = "i",
     tabe = "t",
-    quit = "q",
+    quit = { "q", "<ESC>" },
   },
   code_action_keys = {
     quit = "q",
