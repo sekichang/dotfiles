@@ -61,15 +61,15 @@ require("lsp_signature").setup {
   max_width = 120,
   use_lspsaga = true,
 }
-vim.cmd [[
-set updatetime=1000
-let s:bl = ['json', 'markdown'] " set blacklist filetype
-highlight LspReferenceText  cterm=underline ctermfg=1 ctermbg=8 gui=underline guibg=#444444
-highlight LspReferenceRead  cterm=underline ctermfg=1 ctermbg=8 gui=underline guibg=#444444
-highlight LspReferenceWrite cterm=underline ctermfg=1 ctermbg=8 gui=underline guibg=#444444
-augroup lsp_document_highlight
-  autocmd! * <buffer>
-  autocmd CursorHold,CursorHoldI <buffer> if index(s:bl, &ft) < 0 | lua vim.lsp.buf.document_highlight()
-  autocmd CursorMoved,CursorMovedI <buffer> if index(s:bl, &ft) < 0 | lua vim.lsp.buf.clear_references()
-augroup END
-]]
+--vim.cmd [[
+--set updatetime=1000
+--let s:bl = ['json', 'markdown'] " set blacklist filetype
+--highlight LspReferenceText  cterm=underline ctermfg=1 ctermbg=8 gui=underline guibg=#444444
+--highlight LspReferenceRead  cterm=underline ctermfg=1 ctermbg=8 gui=underline guibg=#444444
+--highlight LspReferenceWrite cterm=underline ctermfg=1 ctermbg=8 gui=underline guibg=#444444
+--augroup lsp_document_highlight
+--  autocmd! * <buffer>
+--  autocmd CursorHold,CursorHoldI <buffer> if index(s:bl, &ft) < 0 | lua vim.lsp.buf.document_highlight()
+--  autocmd CursorMoved,CursorMovedI <buffer> if index(s:bl, &ft) < 0 | lua vim.lsp.buf.clear_references()
+--augroup END
+--]]
