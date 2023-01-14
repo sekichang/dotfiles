@@ -58,6 +58,15 @@ telescope.setup {
 }
 telescope.load_extension "file_browser"
 
+vim.keymap.set("n", ";b", "<Cmd>Telescope buffers<CR>")
+vim.keymap.set("n", ";d", "<Cmd>Telescope diagnostics<CR>")
+vim.keymap.set("n", ";f", "<Cmd>Telescope find_files<CR>")
+vim.keymap.set("n", ";g", "<Cmd>Telescope live_grep<CR>")
+vim.keymap.set("n", ";t", "<Cmd>Telescope help_tags<CR>")
+vim.keymap.set("n", ";r", "<Cmd>Telescope oldfiles<CR>")
+vim.keymap.set("n", ";s", "<Cmd>Telescope git_status<CR>")
+vim.keymap.set("n", ";;", "<Cmd>Telescope resume<CR>")
+
 vim.keymap.set("n", "<space>f", function()
   telescope.extensions.file_browser.file_browser {
     path = "%:p:h",
