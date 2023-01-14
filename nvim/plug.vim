@@ -93,4 +93,7 @@ Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
 " nui
 Plug 'folke/noice.nvim'
 Plug 'MunifTanjim/nui.nvim'
+
+" comment
+Plug 'numToStr/Comment.nvim'
 call plug#end()
