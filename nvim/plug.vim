@@ -52,7 +52,7 @@ Plug 'L3MON4D3/LuaSnip'
 
 " icon
 Plug 'onsails/lspkind.nvim'
-Plug 'kyazdani42/nvim-web-devicons'
+Plug 'nvim-tree/nvim-web-devicons'
 
 " error
 Plug 'folke/trouble.nvim'
