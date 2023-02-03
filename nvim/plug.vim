@@ -29,6 +29,7 @@ Plug 'cocopon/iceberg.vim'
 Plug 'navarasu/onedark.nvim'
 Plug 'rebelot/kanagawa.nvim'
 Plug 'olimorris/onedarkpro.nvim'
+Plug 'EdenEast/nightfox.nvim'
 
 " lsp
 Plug 'neovim/nvim-lspconfig'
