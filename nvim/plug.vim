@@ -3,10 +3,12 @@
 "------------------------
 call plug#begin()
 
-" ステータスバーのカスタマイズ
-"Plug 'itchyny/lightline.vim'
+" Lua Library
+Plug 'nvim-lua/plenary.nvim'
+Plug 'MunifTanjim/nui.nvim'
+
+" Statuline
 "Plug 'nvim-lualine/lualine.nvim'
-"Plug 'feline-nvim/feline.nvim'
 Plug 'NTBBloodbath/galaxyline.nvim'
 
 " インデントの可視化
@@ -31,12 +33,17 @@ Plug 'rebelot/kanagawa.nvim'
 Plug 'olimorris/onedarkpro.nvim'
 Plug 'EdenEast/nightfox.nvim'
 
-" lsp
+" LSP
 Plug 'neovim/nvim-lspconfig'
 Plug 'williamboman/mason.nvim'
 Plug 'williamboman/mason-lspconfig.nvim'
 Plug 'ray-x/lsp_signature.nvim'
 Plug 'glepnir/lspsaga.nvim', { 'branch': 'main' }
+
+" error
+Plug 'folke/trouble.nvim'
+
+" Format & Lint
 Plug 'jose-elias-alvarez/null-ls.nvim'
 
 " cmp
@@ -55,24 +62,19 @@ Plug 'L3MON4D3/LuaSnip'
 Plug 'onsails/lspkind.nvim'
 Plug 'nvim-tree/nvim-web-devicons'
 
-" error
-Plug 'folke/trouble.nvim'
-
 " telescope
 Plug 'nvim-telescope/telescope.nvim'
-Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope-file-browser.nvim'
 
 " treesitter
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'nvim-telescope/telescope-file-browser.nvim'
 Plug 'p00f/nvim-ts-rainbow'
 
-" filer
+" Filer
 Plug 'obaland/vfiler.vim'
 Plug 'obaland/vfiler-column-devicons'
 
 Plug 'folke/which-key.nvim'
-Plug 'kevinhwang91/nvim-hlslens'
 Plug 'windwp/nvim-autopairs'
 Plug 'windwp/nvim-ts-autotag'
 
@@ -83,19 +85,34 @@ Plug 'romgrk/barbar.nvim'
 "
 Plug 'norcalli/nvim-colorizer.lua'
 
+" markdown preview
 Plug 'iamcco/markdown-preview.nvim', { 'for': ['markdown'], 'do': 'cd app & npm install' }
 
+" Move
 Plug 'phaazon/hop.nvim'
+Plug 'jinh0/eyeliner.nvim'
+Plug 'machakann/vim-columnmove' "縦移動
+
+" Search
+Plug 'kevinhwang91/nvim-hlslens'
+
+" Fuzzy Find
 Plug 'hrsh7th/vim-searchx'
 Plug 'rlane/pounce.nvim'
-Plug 'kylechui/nvim-surround'
-Plug 'petertriho/nvim-scrollbar'
-Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
-" nui
-Plug 'folke/noice.nvim'
-Plug 'MunifTanjim/nui.nvim'
 
-" comment
+"
+Plug 'kylechui/nvim-surround'
+
+" Scrollbar
+Plug 'petertriho/nvim-scrollbar'
+
+" Terminal
+Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
+
+" Notification
+Plug 'folke/noice.nvim'
+
+" Comment out
 Plug 'numToStr/Comment.nvim'
 
 " Transrate
