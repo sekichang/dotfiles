@@ -92,6 +92,7 @@ Plug 'iamcco/markdown-preview.nvim', { 'for': ['markdown'], 'do': 'cd app & npm 
 Plug 'phaazon/hop.nvim'
 Plug 'jinh0/eyeliner.nvim'
 Plug 'machakann/vim-columnmove' "縦移動
+Plug 'haya14busa/vim-edgemotion'
 
 " Search
 Plug 'kevinhwang91/nvim-hlslens'
