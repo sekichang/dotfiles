@@ -90,6 +90,7 @@ local mappings = {
   -- ["w"] = { "<cmd>w<CR>", "Save" },
   -- ["q"] = { "<cmd>q!<CR>", "Quit!" },
   ["r"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
+  ["T"] = { "<cmd>Translate ja<cr>", "翻訳" },
   ["x"] = { "<cmd>TroubleToggle<cr>", "Trouble" },
 
   b = {

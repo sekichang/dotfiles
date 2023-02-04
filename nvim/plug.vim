@@ -97,4 +97,9 @@ Plug 'MunifTanjim/nui.nvim'
 
 " comment
 Plug 'numToStr/Comment.nvim'
+
+" Transrate
+Plug 'uga-rosa/translate.nvim'
+
+
 call plug#end()
