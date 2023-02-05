@@ -1,7 +1,7 @@
 # install
 
-``` sh
-brew install git nvim fish tig tmux exa bat fzf volta gnu-sed gawk bash
+```sh
+brew install git nvim fish tig tmux exa bat fzf gnu-sed gawk bash
 
 cd ~/.config
 ln -s ~/dotfiles/nvim
