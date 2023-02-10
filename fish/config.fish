@@ -13,7 +13,7 @@ if type -q exa
   balias la 'ls -a'
   balias ll 'ls -l --time-style iso'
   balias lla 'll -a'
-  balias lt 'la -T'
+  balias lt 'la -T -L 3 -I ".git|.cache"'
 end
 if type -q bat
   alias bat 'bat --theme="Monokai Extended"'
