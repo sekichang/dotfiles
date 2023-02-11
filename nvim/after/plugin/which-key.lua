@@ -92,7 +92,6 @@ local mappings = {
   ["r"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
   ["T"] = { "<cmd>Translate ja<cr>", "翻訳" },
   ["x"] = { "<cmd>TroubleToggle<cr>", "Trouble" },
-
   b = {
     name = "Buffers",
     b = {
@@ -102,7 +101,6 @@ local mappings = {
     n = { "<cmd>bn<cr>", "Next" },
     p = { "<cmd>bp<cr>", "Previous" },
   },
-
   g = {
     name = "Git",
     b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
@@ -111,7 +109,6 @@ local mappings = {
     s = { "<cmd>Telescope git_status<cr>", "git status" },
     d = { "<cmd>Gitsigns diffthis HEAD<cr>", "Diff" },
   },
-
   G = {
     name = "gitsing",
     j = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
@@ -123,7 +120,6 @@ local mappings = {
     s = { "<cmd>lua require 'gitsigns'.stage_hunk()<cr>", "Stage Hunk" },
     u = { "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>", "Undo Stage Hunk" },
   },
-
   l = {
     name = "LSP",
     d = { "<cmd>Telescope diagnostics<cr>", "Diagnostics" },
@@ -137,7 +133,6 @@ local mappings = {
     q = { "<cmd>lua vim.lsp.diagnostic.set_loclist()<cr>", "Quickfix" },
     m = { "<cmd>Mason<cr>", "Mason LSP Installer Overview" },
   },
-
   p = {
     name = "Plug",
     c = { "<cmd>PlugClean<cr>", "Clean" },
@@ -147,7 +142,6 @@ local mappings = {
     u = { "<cmd>PlugUpdate<cr>", "Update" },
     U = { "<cmd>PlugUpgrade<cr>", "Upgrade" },
   },
-
   s = {
     name = "Search",
     b = { "<cmd>Telescope buffers<CR>", "Buffers" },
@@ -163,7 +157,6 @@ local mappings = {
     r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
     R = { "<cmd>Telescope registers<cr>", "Registers" },
   },
-
   -- t = {
   --   name = "Terminal",
   --   --    n = { "<cmd>lua _NODE_TOGGLE()<cr>", "Node" },
