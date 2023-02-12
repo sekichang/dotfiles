@@ -109,8 +109,8 @@ local mappings = {
     s = { "<cmd>Telescope git_status<cr>", "git status" },
     d = { "<cmd>Gitsigns diffthis HEAD<cr>", "Diff" },
   },
-  G = {
-    name = "gitsing",
+  h = {
+    name = "hunk",
     j = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
     k = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },
     l = { "<cmd>lua require 'gitsigns'.blame_line()<cr>", "Blame" },
