@@ -96,6 +96,7 @@ Plug 'haya14busa/vim-edgemotion'
 
 " Search
 Plug 'kevinhwang91/nvim-hlslens'
+Plug 'rapan931/lasterisk.nvim'
 
 " Fuzzy Find
 Plug 'hrsh7th/vim-searchx'

@@ -1,18 +1,21 @@
 local opts = { noremap = true, silent = true }
 
-vim.api.nvim_set_keymap(
-  "n",
-  "n",
-  [[<Cmd>execute('normal! ' . v:count1 . 'n')<CR><Cmd>lua require('hlslens').start()<CR>]],
-  opts
-)
-vim.api.nvim_set_keymap(
-  "n",
-  "N",
-  [[<Cmd>execute('normal! ' . v:count1 . 'N')<CR><Cmd>lua require('hlslens').start()<CR>]],
-  opts
-)
-vim.api.nvim_set_keymap("n", "*", [[*<Cmd>lua require('hlslens').start()<CR>]], opts)
-vim.api.nvim_set_keymap("n", "#", [[#<Cmd>lua require('hlslens').start()<CR>]], opts)
-vim.api.nvim_set_keymap("n", "g*", [[g*<Cmd>lua require('hlslens').start()<CR>]], opts)
-vim.api.nvim_set_keymap("n", "g#", [[g#<Cmd>lua require('hlslens').start()<CR>]], opts)
+vim.keymap.set("n", "n", function()
+  pcall(vim.cmd, "normal! " .. vim.v.count1 .. "n")
+  require("hlslens").start()
+end, opts)
+
+vim.keymap.set("n", "N", function()
+  pcall(vim.cmd, "normal! " .. vim.v.count1 .. "N")
+  require("hlslens").start()
+end, opts)
+
+vim.keymap.set({ "n", "x" }, "*", function()
+  require("lasterisk").search { is_whole = false }
+  require("hlslens").start()
+end, {})
+
+vim.keymap.set({ "n", "x" }, "g*", function()
+  require("lasterisk").search()
+  require("hlslens").start()
+end, {})
