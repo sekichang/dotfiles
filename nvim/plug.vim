@@ -93,6 +93,7 @@ Plug 'phaazon/hop.nvim'
 Plug 'jinh0/eyeliner.nvim'
 Plug 'machakann/vim-columnmove' "縦移動
 Plug 'haya14busa/vim-edgemotion'
+Plug 'ggandor/lightspeed.nvim'
 
 " Search
 Plug 'kevinhwang91/nvim-hlslens'
