@@ -1,6 +1,5 @@
 local saga = require "lspsaga"
 local keymap = vim.keymap.set
-local diagnostic = vim.diagnostic
 
 saga.setup {
   finder = {
@@ -141,10 +140,10 @@ keymap("n", "]e", "<cmd>Lspsaga diagnostic_jump_next<CR>", opts)
 
 -- Only jump to error
 keymap("n", "[E", function()
-  require("lspsaga.diagnostic").goto_prev { severity = diagnostic.severity.ERROR }
+  require("lspsaga.diagnostic").goto_prev { severity = vim.diagnostic.severity.ERROR }
 end, opts)
 keymap("n", "]E", function()
-  require("lspsaga.diagnostic").goto_next { severity = diagnostic.severity.ERROR }
+  require("lspsaga.diagnostic").goto_next { severity = vim.diagnostic.severity.ERROR }
 end, opts)
 
 -- Outline
