@@ -39,6 +39,7 @@ Plug 'saadparwaiz1/cmp_luasnip'
 " snipet
 Plug 'L3MON4D3/LuaSnip'
 "Plug 'rafamadriz/friendly-snippets'
+Plug 'sekichang/friendly-snippets'
 
 " LSP
 Plug 'neovim/nvim-lspconfig'
