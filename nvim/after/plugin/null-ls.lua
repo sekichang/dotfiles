@@ -10,6 +10,9 @@ local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
 null_ls.setup {
   sources = {
+    null_ls.builtins.diagnostics.eslint_d.with {
+      diagnostics_format = "[eslint] #{m}\n(#{c})",
+    },
     formatting.prettier.with {
       prefer_local = "node_modules/.bin",
     },
