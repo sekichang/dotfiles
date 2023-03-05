@@ -69,8 +69,8 @@ Plug 'p00f/nvim-ts-rainbow'
 Plug 'NTBBloodbath/galaxyline.nvim'
 
 " Bufferline
-" Plug 'akinsho/bufferline.nvim', { 'tag': 'v3.*' }
-Plug 'romgrk/barbar.nvim'
+Plug 'akinsho/bufferline.nvim', { 'tag': 'v3.*' }
+" Plug 'romgrk/barbar.nvim'
 
 " Highlight
 Plug 'norcalli/nvim-colorizer.lua'
