@@ -30,7 +30,7 @@ end
 if type -q gsed
   balias sed gsed
 end
-balias mkdir 'mkdir -p'
+# balias mkdir 'mkdir -p'
 balias ... 'cd ../..'
 balias .... 'cd ../../..'
 abbr g git
