@@ -1,12 +1,12 @@
 local opts = { noremap = true, silent = true }
 
 vim.keymap.set("n", "n", function()
-  pcall(vim.cmd, "normal! " .. vim.v.count1 .. "n")
+  pcall(vim.cmd, "normal! " .. vim.v.count1 .. "nzz")
   require("hlslens").start()
 end, opts)
 
 vim.keymap.set("n", "N", function()
-  pcall(vim.cmd, "normal! " .. vim.v.count1 .. "N")
+  pcall(vim.cmd, "normal! " .. vim.v.count1 .. "Nzz")
   require("hlslens").start()
 end, opts)
 
