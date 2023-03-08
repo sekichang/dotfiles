@@ -72,6 +72,8 @@ Plug 'NTBBloodbath/galaxyline.nvim'
 Plug 'akinsho/bufferline.nvim', { 'tag': 'v3.*' }
 " Plug 'romgrk/barbar.nvim'
 
+Plug 'famiu/bufdelete.nvim'
+
 " Highlight
 Plug 'norcalli/nvim-colorizer.lua'
 
