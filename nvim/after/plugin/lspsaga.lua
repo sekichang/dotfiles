@@ -84,8 +84,8 @@ saga.setup {
     -- currently only round theme
     theme = "round",
     -- border type can be single,double,rounded,solid,shadow.
-    border = "single",
-    winblend = 0,
+    border = "rounded",
+    winblend = 10,
     expand = "",
     collapse = "",
     preview = " ",
@@ -95,7 +95,8 @@ saga.setup {
     outgoing = " ",
     colors = {
       --float window normal bakcground color
-      normal_bg = "#1d2536",
+      -- normal_bg = "#1d2536",
+      normal_bg = "#002b36",
       --title background color
       title_bg = "#afd700",
       red = "#e95678",
