@@ -61,6 +61,7 @@ Plug 'nvim-telescope/telescope-file-browser.nvim'
 " Treesitter
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'mfussenegger/nvim-treehopper'
+Plug 'David-Kunz/treesitter-unit'
 
 
 " Treesitter UI customize
