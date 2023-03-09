@@ -1,4 +1,4 @@
--- require("hop").setup()
+require("hop").setup()
 -- vim.api.nvim_set_keymap(
 --   "",
 --   "f",
