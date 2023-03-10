@@ -79,7 +79,10 @@ local opts = {
 }
 
 local mappings = {
-  -- ["c"] = { "<cmd>bd<cr>", "close" },
+  ["b"] = {
+    "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
+    "Buffers",
+  },
   ["e"] = { "<cmd>VFiler -columns=indent,icon,devicons,name,git,mode,size,time<cr>", "Filer" },
   ["E"] = {
     "<cmd>VFiler -auto-cd -auto-resize -keep -layout=left -name=explorer -width=30 -columns=indent,icon,devicons,name,git<cr>",
@@ -88,19 +91,10 @@ local mappings = {
   -- ["h"] = { "<cmd>HopLine<cr>", "HopLine" },
   -- ["v"] = { "<cmd>vsplit<CR>", "vsplit" },
   -- ["w"] = { "<cmd>w<CR>", "Save" },
-  -- ["q"] = { "<cmd>q!<CR>", "Quit!" },
+  ["q"] = { "<cmd>q!<CR>", "Quit!" },
   ["r"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
   ["T"] = { "<cmd>Translate ja<cr>", "翻訳" },
   ["x"] = { "<cmd>TroubleToggle<cr>", "Trouble" },
-  b = {
-    name = "Buffers",
-    b = {
-      "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
-      "Buffers",
-    },
-    n = { "<cmd>bn<cr>", "Next" },
-    p = { "<cmd>bp<cr>", "Previous" },
-  },
   g = {
     name = "Git",
     b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
