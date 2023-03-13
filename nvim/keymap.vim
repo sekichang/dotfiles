@@ -87,3 +87,6 @@ cnoremap <C-h> <Bs>
 " 前履歴/次履歴
 cnoremap <C-p> <Up>
 cnoremap <C-n> <Down>
+
+" Macro
+nnoremap Q @q
