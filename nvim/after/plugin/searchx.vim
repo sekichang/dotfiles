@@ -31,8 +31,8 @@ nnoremap / <Cmd>call searchx#start({'dir': 1})<CR><Cmd>call SearchInfo()<CR>
 nnoremap ? <Cmd>call searchx#start({'dir': 0})<CR><Cmd>call SearchInfo()<CR>
 
 " Move to next/prev match.
-nnoremap n <Cmd>call searchx#next_dir()<CR><Cmd>call SearchInfo()<CR>zz
-nnoremap N <Cmd>call searchx#prev_dir()<CR><Cmd>call SearchInfo()<CR>zz
+" nnoremap n <Cmd>call searchx#next_dir()<CR><Cmd>call SearchInfo()<CR>zz
+" nnoremap N <Cmd>call searchx#prev_dir()<CR><Cmd>call SearchInfo()<CR>zz
 
 function! SearchInfo() abort
     lua require('hlslens').start()
