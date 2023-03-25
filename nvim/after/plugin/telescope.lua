@@ -1,7 +1,3 @@
-vim.cmd [[
-let mapleader = "\<Space>"
-]]
-
 local status, telescope = pcall(require, "telescope")
 if not status then
   return

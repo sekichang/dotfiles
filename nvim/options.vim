@@ -1,3 +1,6 @@
+" <Leader>キーを設定する
+let mapleader = "\<space>"
+
 set number             "行番号を表示
 set relativenumber     "相対行番号を表示
 set noshowmode         "現在のモードの非表示
