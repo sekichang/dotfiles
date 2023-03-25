@@ -92,7 +92,7 @@ Plug 'jinh0/eyeliner.nvim'
 Plug 'ggandor/lightspeed.nvim'
 
 " Vertical Move
-Plug 'machakann/vim-columnmove'
+" Plug 'machakann/vim-columnmove'
 Plug 'haya14busa/vim-edgemotion'
 
 " Operator
