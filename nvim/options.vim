@@ -1,4 +1,4 @@
-" <Leader>キーを設定する
+" Leaderキーをspaceキーに設定
 let mapleader = "\<space>"
 
 set number             "行番号を表示
