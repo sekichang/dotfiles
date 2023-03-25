@@ -1,2 +1,2 @@
-nmap <C-j> <Plug>(edgemotion-j)
-nmap <C-k> <Plug>(edgemotion-k)
+nmap <C-j> <Plug>(edgemotion-j)zz
+nmap <C-k> <Plug>(edgemotion-k)zz
