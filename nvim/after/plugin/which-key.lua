@@ -93,8 +93,9 @@ local mappings = {
   -- ["w"] = { "<cmd>w<CR>", "Save" },
   ["q"] = { "<cmd>q!<CR>", "Quit!" },
   ["r"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
-  ["T"] = { "<cmd>Translate ja<cr>", "翻訳" },
+  ["t"] = { "<cmd>Translate ja<cr>", "翻訳" },
   ["x"] = { "<cmd>TroubleToggle<cr>", "Trouble" },
+  ["T"] = { "<cmd>ToggleTerm direction=float<cr>", "Float" },
   g = {
     name = "Git",
     b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
@@ -150,12 +151,6 @@ local mappings = {
     M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
     r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
     R = { "<cmd>Telescope registers<cr>", "Registers" },
-  },
-  t = {
-    name = "Terminal",
-    f = { "<cmd>ToggleTerm direction=float<cr>", "Float" },
-    h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
-    v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
   },
 }
 
