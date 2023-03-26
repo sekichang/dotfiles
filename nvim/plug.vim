@@ -43,7 +43,7 @@ Plug 'sekichang/friendly-snippets'
 
 " LSP
 Plug 'neovim/nvim-lspconfig'
-Plug 'williamboman/mason.nvim'
+Plug 'williamboman/mason.nvim', { 'do': ':MasonUpdate' }
 Plug 'williamboman/mason-lspconfig.nvim'
 Plug 'ray-x/lsp_signature.nvim'
 
