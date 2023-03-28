@@ -66,7 +66,8 @@ Plug 'David-Kunz/treesitter-unit'
 
 
 " Treesitter UI customize
-Plug 'p00f/nvim-ts-rainbow'
+" Plug 'p00f/nvim-ts-rainbow'
+Plug 'mrjones2014/nvim-ts-rainbow'
 
 " Statuline
 "Plug 'nvim-lualine/lualine.nvim'
