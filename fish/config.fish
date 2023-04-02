@@ -41,6 +41,10 @@ abbr -a gd 'git diff'
 abbr -a gs 'git status'
 abbr -a gp 'git push'
 abbr d docker
+if type -q tmux
+  abbr t tmux
+  abbr -a tl 'tmux ls'
+end
 
 
 # volta PATH
