@@ -46,7 +46,10 @@ if type -q tmux
   abbr -a tl 'tmux ls'
 end
 
+# homebrew PATH
+fish_add_path /opt/homebrew/bin
+fish_add_path /opt/homebrew/sbin
 
 # volta PATH
 set -gx VOLTA_HOME "$HOME/.volta"
-set -gx PATH "$VOLTA_HOME/bin" $PATH
+fish_add_path "$VOLTA_HOME/bin"
