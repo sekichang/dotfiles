@@ -44,6 +44,7 @@ abbr d docker
 if type -q tmux
   abbr t tmux
   abbr -a tl 'tmux ls'
+  abbr -a tn 'tmux new -s' # 名前をつけて新規セッション開始
 end
 
 # homebrew PATH
