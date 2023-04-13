@@ -5,8 +5,7 @@ require("pounce").setup {
   debug = false,
 }
 
-vim.keymap.set("n", "s", "<cmd>Pounce<CR>")
-vim.keymap.set("v", "s", "<cmd>Pounce<CR>")
+vim.keymap.set({ "n", "x" }, "s", "<cmd>Pounce<CR>")
 vim.keymap.set("o", "gs", "<cmd>Pounce<CR>")
 
 vim.cmd [[
