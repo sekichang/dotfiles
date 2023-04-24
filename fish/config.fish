@@ -16,12 +16,12 @@ if type -q exa
   balias lt 'la -T -L 3 -I ".git|.cache"'
 end
 if type -q bat
-  alias bat 'bat --theme="Monokai Extended"'
+  alias bat 'bat --theme="gruvbox-dark"'
   balias cat bat
 end
 # for ubuntu
 if type -q batcat
-  alias bat 'batcat --theme="Monokai Extended"'
+  alias bat 'batcat --theme="gruvbox-dark"'
   balias cat bat
 end
 if type -q gawk
