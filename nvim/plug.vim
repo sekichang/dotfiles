@@ -74,7 +74,7 @@ Plug 'mrjones2014/nvim-ts-rainbow'
 Plug 'NTBBloodbath/galaxyline.nvim'
 
 " Bufferline
-Plug 'akinsho/bufferline.nvim', { 'tag': 'v3.*' }
+Plug 'akinsho/bufferline.nvim', { 'tag': 'v4.*' }
 " Plug 'romgrk/barbar.nvim'
 
 Plug 'famiu/bufdelete.nvim'
