@@ -38,6 +38,7 @@ abbr -a ga __fzf_git_add
 abbr -a gc 'git commit'
 abbr -a gco 'git checkout'
 abbr -a gd 'git diff'
+abbr -a gcm 'git commit -m'
 abbr -a gs 'git status'
 abbr -a gp 'git push'
 abbr d docker
