@@ -6,8 +6,10 @@ if battery_info=$(/usr/bin/pmset -g ps | awk '{ if (NR == 2) print $3 " " $4 }' 
     battery="#[bg=green,fg=black]  ⚡$battery_quantity% #[default]"
   elif (( $battery_quantity > 20 )); then
     battery="#[bg=green,fg=black] $battery_quantity% #[default]"
-  elif (( $battery_quantity > 5 )); then
+  elif (( $battery_quantity > 10 )); then
     battery="#[bg=yellow,fg=black] $battery_quantity% #[default]"
+  elif (( $battery_quantity > 5 )); then
+    battery="#[bg=orange,fg=black] $battery_quantity% #[default]"
   else
     battery="#[bg=red,fg=black] $battery_quantity% #[default]"
   fi
