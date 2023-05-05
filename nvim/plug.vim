@@ -94,7 +94,7 @@ Plug 'ggandor/lightspeed.nvim'
 
 " Vertical Move
 " Plug 'machakann/vim-columnmove'
-Plug 'haya14busa/vim-edgemotion'
+" Plug 'haya14busa/vim-edgemotion'
 
 " Operator
 Plug 'kylechui/nvim-surround'
