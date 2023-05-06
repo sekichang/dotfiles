@@ -11,10 +11,10 @@ inoremap <C-k> <Up>
 inoremap <C-l> <Right>
 
 " 画面移動
-"nnoremap <silent><C-h> <C-w>h
-"nnoremap <silent><C-j> <C-w>j
-"nnoremap <silent><C-k> <C-w>k
-"nnoremap <silent><C-l> <C-w>l
+nnoremap <silent><C-h> <C-w>h
+nnoremap <silent><C-j> <C-w>j
+nnoremap <silent><C-k> <C-w>k
+nnoremap <silent><C-l> <C-w>l
 
 " 画面サイズ変更
 nnoremap <silent><A-Up> :resize -2<CR>
