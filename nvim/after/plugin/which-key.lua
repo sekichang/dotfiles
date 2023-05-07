@@ -95,7 +95,7 @@ local mappings = {
   ["r"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
   ["t"] = { "<cmd>Translate ja<cr>", "翻訳" },
   ["x"] = { "<cmd>TroubleToggle<cr>", "Trouble" },
-  ["T"] = { "<cmd>ToggleTerm direction=float<cr>", "Float" },
+  ["T"] = { "<cmd>ToggleTerm direction=float<cr>", "Terminal" },
   g = {
     name = "Git",
     b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
