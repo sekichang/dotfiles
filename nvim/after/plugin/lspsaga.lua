@@ -7,9 +7,9 @@ saga.setup {
     enable = false,
   },
   ui = {
+    code_action = "",
     theme = "round",
     border = "rounded",
-    winblend = 10,
   },
 }
 
