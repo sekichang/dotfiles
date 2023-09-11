@@ -8,8 +8,8 @@ set -gx EDITOR nvim
 if type -q nvim
   balias vi nvim
 end
-if type -q exa
-  balias ls 'exa -h --git --icons'
+if type -q eza
+  balias ls 'eza -h --git --icons'
   balias la 'ls -a'
   balias ll 'ls -l --time-style iso'
   balias lla 'll -a'
