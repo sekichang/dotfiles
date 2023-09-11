@@ -1,0 +1,26 @@
+require("indent_blankline").setup({
+  show_first_indent_level = false,
+  -- 縦線を除外するプラグイン等
+  filetype_exclude = {
+    "help",
+    "dashboard",
+    "dashpreview",
+    --"NvimTree",
+    --"neo-tree",
+    --"vista",
+    "sagahover",
+    "sagasignature",
+    "lazy",
+    "log",
+    "lspsagafinder",
+    "lspinfo",
+    --"dapui_scopes",
+    --"dapui_breakpoints",
+    --"dapui_stacks",
+    --"dapui_watches",
+    --"dap-repl",
+    "toggleterm",
+    "alpha",
+    --"coc-explorer",
+  },
+})
