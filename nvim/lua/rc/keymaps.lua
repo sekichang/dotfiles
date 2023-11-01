@@ -67,8 +67,8 @@ keymap({ "n", "x" }, "H", "^")
 keymap({ "n", "x" }, "L", "$")
 
 -- インデントの調整後にビジュアルモードを解除しない
---vnoremap < <gv
---vnoremap > >gv
+keymap("x", "<", "<gv")
+keymap("x", ">", ">gv")
 
 -- 貼り付け先のインデントに合わせてペースト
 --nnoremap p ]p
