@@ -38,10 +38,14 @@ cmp.setup({
     expand = function(args)
       luasnip.lsp_expand(args.body) -- For `luasnip` users.
     end,
-  },
-  window = {
-    -- completion = cmp.config.window.bordered(),
-    -- documentation = cmp.config.window.bordered(),
+    window = {
+      completion = cmp.config.window.bordered({
+        border = "single",
+      }),
+      documentation = cmp.config.window.bordered({
+        border = "single",
+      }),
+    },
   },
   mapping = cmp.mapping.preset.insert({
     ["<C-b>"] = cmp.mapping.scroll_docs(-4),
@@ -76,6 +80,8 @@ cmp.setup({
     { name = "nvim_lsp" },
     { name = "luasnip" },
     { name = "path" },
+    { name = "calc" },
+    { name = "nvim_lsp_signature_help" },
   }, {
     { name = "buffer" },
   }),

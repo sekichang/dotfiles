@@ -31,8 +31,8 @@ local lspconfig = require("lspconfig")
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 require("mason").setup()
-local mason_lspconfig = require("mason-lspconfig")
-mason_lspconfig.setup({
+--local mason_lspconfig = require("mason-lspconfig")
+require("mason-lspconfig").setup({
   ensure_installed = {
     "bashls",
     "emmet_ls",
@@ -41,7 +41,7 @@ mason_lspconfig.setup({
     "vimls",
   },
 })
-mason_lspconfig.setup_handlers({
+require("mason-lspconfig").setup_handlers({
   function(server_name)
     lspconfig[server_name].setup({
       on_attach = on_attach,
@@ -61,24 +61,11 @@ mason_lspconfig.setup_handlers({
   end,
 })
 
-require("lsp_signature").setup({
-  bind = true,
-  handler_opts = {
-    border = "single",
-  },
-  max_width = 120,
-  use_lspsaga = true,
-})
-
---vim.cmd [[
---set updatetime=1000
---let s:bl = ['json', 'markdown'] " set blacklist filetype
---highlight LspReferenceText  cterm=underline ctermfg=1 ctermbg=8 gui=underline guibg=#444444
---highlight LspReferenceRead  cterm=underline ctermfg=1 ctermbg=8 gui=underline guibg=#444444
---highlight LspReferenceWrite cterm=underline ctermfg=1 ctermbg=8 gui=underline guibg=#444444
---augroup lsp_document_highlight
---  autocmd! * <buffer>
---  autocmd CursorHold,CursorHoldI <buffer> if index(s:bl, &ft) < 0 | lua vim.lsp.buf.document_highlight()
---  autocmd CursorMoved,CursorMovedI <buffer> if index(s:bl, &ft) < 0 | lua vim.lsp.buf.clear_references()
---augroup END
---]]
+-- require("lsp_signature").setup({
+--   bind = true,
+--   handler_opts = {
+--     border = "single",
+--   },
+--   max_width = 120,
+--   use_lspsaga = true,
+-- })

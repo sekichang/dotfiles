@@ -20,7 +20,8 @@ require("lazy").setup({
   -- FuzzyFinders
   {
     "nvim-telescope/telescope.nvim",
-    event = { "VimEnter" },
+    -- event = { "VimEnter" },
+    keys = {},
     config = function()
       require("rc/pluginconfig/telescope")
     end,
@@ -67,12 +68,13 @@ require("lazy").setup({
   -- Auto Completion
   {
     "hrsh7th/nvim-cmp",
-    event = "VimEnter",
+    event = { "InsertEnter", "CmdlineEnter" },
     config = function()
       require("rc/pluginconfig/nvim-cmp")
     end,
     dependencies = {
       { "hrsh7th/cmp-nvim-lsp" },
+      { "hrsh7th/cmp-nvim-lsp-signature-help" },
       { "hrsh7th/cmp-nvim-lsp-document-symbol" },
       { "hrsh7th/cmp-buffer" },
       { "hrsh7th/cmp-path" },
@@ -86,14 +88,14 @@ require("lazy").setup({
       { "rafamadriz/friendly-snippets" },
     },
   },
-  {
-    "ray-x/lsp_signature.nvim",
-    event = "VeryLazy",
-    opts = {},
-    config = function(_, opts)
-      require("lsp_signature").setup(opts)
-    end,
-  },
+  -- {
+  --   "ray-x/lsp_signature.nvim",
+  --   event = "VeryLazy",
+  --   opts = {},
+  --   config = function(_, opts)
+  --     require("lsp_signature").setup(opts)
+  --   end,
+  -- },
 
   -- Find
   {
@@ -145,6 +147,8 @@ require("lazy").setup({
   -- Bufferline
   {
     "akinsho/bufferline.nvim",
+    version = "*",
+    dependencies = "nvim-tree/nvim-web-devicons",
     event = "VimEnter",
     enabled = function()
       return not vim.g.vscode
@@ -175,19 +179,10 @@ require("lazy").setup({
   -- ColorScheme
   {
     "EdenEast/nightfox.nvim",
-    event = { "BufReadPre", "BufWinEnter" },
+    priority = 1000,
     config = function()
       require("rc/pluginconfig/nightfox")
     end,
-  },
-
-  -- Font
-  {
-    --
-    "kyazdani42/nvim-web-devicons",
-    -- enabled = function()
-    -- 	return not os.getenv("DISABLE_DEVICONS") or os.getenv("DISABLE_DEVICONS") == "false"
-    -- end,
   },
 
   -- Reading assistant
@@ -212,6 +207,7 @@ require("lazy").setup({
   {
     "folke/which-key.nvim",
     event = "VeryLazy",
+    -- keys = { "<leader>" },
     config = function()
       require("rc/pluginconfig/which-key")
     end,
@@ -220,7 +216,11 @@ require("lazy").setup({
   -- LSP's UI
   {
     "nvimdev/lspsaga.nvim",
-    event = "VimEnter",
+    event = "LspAttach",
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+      -- "nvim-tree/nvim-web-devicons",
+    },
     config = function()
       require("rc/pluginconfig/lspsaga")
     end,

@@ -1,5 +1,5 @@
 vim.wo.number = true -- 行番号を表示
---set relativenumber     "相対行番号を表示
+vim.wo.relativenumber = true -- 相対行番号を表示
 vim.opt.showmode = false -- モードを非表示
 vim.opt.cursorline = true -- カーソル行をハイライト
 vim.opt.scrolloff = 5 -- スクロールする時に下が見えるようにする
@@ -27,3 +27,4 @@ vim.opt.termguicolors = true -- set termguicolors
 -- let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 vim.opt.signcolumn = "yes" -- 常に左端のサイン列を表示
 -- "set updatetime=100 " 反映されるまでの時間(1s)
+vim.cmd("set shortmess+=I") -- 起動時のメッセージを消す
