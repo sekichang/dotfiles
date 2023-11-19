@@ -1,35 +1,35 @@
 set fish_greeting ""
 
 #set -gx TERM xterm-256color
-set -gx TERM "screen-256color"
+set -gx TERM screen-256color
 
 set -gx EDITOR nvim
 
 # alias
 if type -q nvim
-  balias vi nvim
+    balias vi nvim
 end
 if type -q eza
-  balias ls 'eza -h --git --icons'
-  balias la 'ls -a'
-  balias ll 'ls -l --time-style iso'
-  balias lla 'll -a'
-  balias lt 'la -T -L 3 -I ".git|.cache"'
+    balias ls 'eza -h --git --icons'
+    balias la 'ls -a'
+    balias ll 'ls -l --time-style iso'
+    balias lla 'll -a'
+    balias lt 'la -T -L 3 -I ".git|.cache"'
 end
 if type -q bat
-  alias bat 'bat --theme="gruvbox-dark"'
-  balias cat bat
+    alias bat 'bat --theme="gruvbox-dark"'
+    balias cat bat
 end
 # for ubuntu
 if type -q batcat
-  alias bat 'batcat --theme="gruvbox-dark"'
-  balias cat bat
+    alias bat 'batcat --theme="gruvbox-dark"'
+    balias cat bat
 end
 if type -q gawk
-  balias awk gawk
+    balias awk gawk
 end
 if type -q gsed
-  balias sed gsed
+    balias sed gsed
 end
 # balias mkdir 'mkdir -p'
 balias ... 'cd ../..'
@@ -44,9 +44,9 @@ abbr -a gs 'git status'
 abbr -a gp 'git push'
 abbr d docker
 if type -q tmux
-  abbr t tmux
-  abbr -a tl 'tmux ls'
-  abbr -a tn 'tmux new -s' # 名前をつけて新規セッション開始
+    abbr t tmux
+    abbr -a tl 'tmux ls'
+    abbr -a tn 'tmux new -s' # 名前をつけて新規セッション開始
 end
 
 # homebrew PATH
