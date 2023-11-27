@@ -4,9 +4,9 @@ PS1='\[\033[33m\]\u \[\033[32m\t\] \[\033[34m\w\]\n\[\033[0m\]\$ '
 # alias
 alias bashrc='~.bashrc'
 alias vi=nvim
-alias ls='exa'
-alias la='exa -a'
-alias ll='exa -alh'
+alias ls='eza'
+alias la='eza -a'
+alias ll='eza -alh'
 alias cat='bat'
 alias mkdir='mkdir -p'
 alias df='df -h'
