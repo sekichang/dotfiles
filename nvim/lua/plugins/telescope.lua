@@ -82,6 +82,7 @@ return {
             ["n"] = {
               -- your custom normal mode mappings
               ["N"] = fb_actions.create,
+              ["c"] = fb_actions.copy,
               ["h"] = fb_actions.goto_parent_dir,
             },
           },
