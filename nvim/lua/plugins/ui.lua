@@ -10,11 +10,30 @@ return {
   {
     "b0o/incline.nvim",
     event = "BufReadPre",
+    dependencies = { "folke/tokyonight.nvim" },
     priority = 1200,
     config = function()
+      local colors = require("tokyonight.colors").setup()
       require("incline").setup({
+        highlight = {
+          groups = {
+            InclineNormal = { guibg = colors.dark3 }, --, guifg = colors.black },
+            --     InclineNormalNC = { guifg = colors.dark3, guibg = colors.black },
+          },
+        },
         window = { margin = { vertical = 0, horizontal = 1 } },
-        hide = { cursorline = true },
+        hide = {
+          cursorline = true,
+        },
+        render = function(props)
+          local filename = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(props.buf), ":t")
+          if vim.bo[props.buf].modified then
+            filename = "[+] " .. filename
+          end
+
+          local icon = require("nvim-web-devicons").get_icon(filename)
+          return { { icon }, { " " }, { filename } }
+        end,
       })
     end,
   },
