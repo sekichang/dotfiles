@@ -9,31 +9,44 @@ set -gx EDITOR nvim
 if type -q nvim
     balias vi nvim
 end
+
 if type -q eza
-    balias ls 'eza -h --git --icons'
+    balias ls 'eza --git --icons --group-directories-first'
     balias la 'ls -a'
-    balias ll 'ls -l --time-style iso'
+    balias ll 'ls -lh --time-style iso'
     balias lla 'll -a'
     balias lt 'la -T -L 3 -I ".git|.cache"'
 end
+
+# bat
 if type -q bat
     alias bat 'bat --theme="gruvbox-dark"'
     balias cat bat
 end
+
 # for ubuntu
 if type -q batcat
     alias bat 'batcat --theme="gruvbox-dark"'
     balias cat bat
 end
+
+# awk
 if type -q gawk
     balias awk gawk
 end
+
+# sed
 if type -q gsed
     balias sed gsed
 end
-# balias mkdir 'mkdir -p'
+
+abbr mkdir 'mkdir -p'
+
+# cd
 balias ... 'cd ../..'
 balias .... 'cd ../../..'
+
+# git
 abbr g git
 abbr -a ga __fzf_git_add
 abbr -a gc 'git commit'
@@ -42,7 +55,11 @@ abbr -a gd 'git diff'
 abbr -a gcm 'git commit -m'
 abbr -a gs 'git status'
 abbr -a gp 'git push'
+
+# docker
 abbr d docker
+
+# tmux
 if type -q tmux
     abbr t tmux
     abbr -a tl 'tmux ls'
