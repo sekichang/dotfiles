@@ -40,6 +40,14 @@ if type -q gsed
     balias sed gsed
 end
 
+if type -q rg
+    balias grep rg
+end
+
+if type -q fd
+    balias find fd
+end
+
 abbr mkdir 'mkdir -p'
 
 # cd
