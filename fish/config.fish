@@ -67,6 +67,9 @@ abbr -a gp 'git push'
 # docker
 abbr d docker
 
+# python
+balias python python3
+
 # tmux
 if type -q tmux
     abbr t tmux
