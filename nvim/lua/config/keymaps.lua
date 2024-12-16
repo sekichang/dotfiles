@@ -17,6 +17,8 @@ keymap("n", "<C-a>", "ggVG")
 keymap({ "n", "x" }, "H", "0")
 keymap({ "n", "x" }, "L", "$")
 
+keymap("n", "G", "Gzz")
+
 -- minisurround
 -- gsaiw' // 単語の周りを'で囲む
 -- gsd' // 単語の周りの'を削除
