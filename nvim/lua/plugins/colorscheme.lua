@@ -25,21 +25,23 @@ return {
   --   end,
   -- },
   --
-  -- {
-  --   "EdenEast/nightfox.nvim",
-  --   lazy = true,
-  --   priority = 1000,
-  --   opts = {
-  --     options = {
-  --       dim_inactive = true, --  dims inactive windows
-  --     },
-  --   },
-  -- },
+  {
+    "EdenEast/nightfox.nvim",
+    lazy = true,
+    priority = 1000,
+    opts = {
+      options = {
+        dim_inactive = true, --  dims inactive windows
+      },
+    },
+  },
 
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "tokyonight",
+      -- colorscheme = "tokyonight",
+      colorscheme = "catppuccin",
+      -- colorscheme = "nightfox",
     },
   },
 }
