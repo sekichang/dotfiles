@@ -19,6 +19,10 @@ keymap({ "n", "x" }, "L", "$")
 
 keymap("n", "G", "Gzz")
 
+-- Increment/decrement
+keymap("n", "+", "<C-a>")
+keymap("n", "-", "<C-x>")
+
 -- minisurround
 -- gsaiw' // 単語の周りを'で囲む
 -- gsd' // 単語の周りの'を削除
