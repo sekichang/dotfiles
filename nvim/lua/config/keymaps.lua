@@ -7,9 +7,6 @@ local opts = { noremap = true, silent = true }
 
 keymap("n", "x", '"_x')
 
--- Delete a word backwards
-keymap("n", "dw", 'vb"_d')
-
 -- Select all
 keymap("n", "<C-a>", "ggVG")
 
