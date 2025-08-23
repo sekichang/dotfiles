@@ -8,6 +8,7 @@ opt.virtualedit = "all" -- 文字がない場所にもカーソルを移動で�
 opt.softtabstop = 2 -- TABキーやBSキーを打ち込んだときの幅を設定
 opt.inccommand = "split" -- 置換結果を別画面で表示
 opt.spelllang = { "en", "cjk" } -- スペルが間違っていると下線が表示される（ただし日本語は対象外にする)
+vim.opt.swapfile = false -- swapfileは作成しない
 
 -- Undercurl
 vim.cmd([[let &t_Cs="\e[4:3m"]])
