@@ -15,6 +15,8 @@ keymap({ "n", "x" }, "H", "0")
 keymap({ "n", "x" }, "L", "$")
 
 keymap("n", "G", "Gzz")
+keymap("n", "n", "nzz")
+keymap("n", "N", "Nzz")
 
 -- Increment/decrement
 keymap("n", "+", "<C-a>")
