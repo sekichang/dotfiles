@@ -20,7 +20,7 @@ end
 
 # bat
 if type -q bat
-    alias bat 'bat --theme="gruvbox-dark"'
+    alias bat 'bat --theme="Solarized (dark)"'
     balias cat bat
 end
 
@@ -69,7 +69,7 @@ abbr d docker
 
 # python
 abbr -a py python3
-#balias python python3
+balias python python3
 
 # tmux
 if type -q tmux
