@@ -5,13 +5,6 @@ return {
     cmd = "IncRename",
     config = true,
   },
-  -- {
-  --   "nvim-cmp",
-  --   dependencies = { "hrsh7th/cmp-emoji" },
-  --   opts = function(_, opts)
-  --     table.insert(opts.sources, { name = "emoji" })
-  --   end,
-  -- },
   {
     "saghen/blink.cmp",
     version = not vim.g.lazyvim_blink_main and "*",
