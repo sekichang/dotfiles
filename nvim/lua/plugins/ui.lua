@@ -18,7 +18,7 @@ return {
         highlight = {
           groups = {
             InclineNormal = { guibg = colors.dark3 }, --, guifg = colors.black },
-            --     InclineNormalNC = { guifg = colors.dark3, guibg = colors.black },
+            -- InclineNormalNC = { guifg = colors.dark3, guibg = colors.black },
           },
         },
         window = { margin = { vertical = 0, horizontal = 1 } },
@@ -32,7 +32,7 @@ return {
           end
 
           local icon = require("nvim-web-devicons").get_icon(filename)
-          return { { icon }, { " " }, { filename } }
+          return { { icon }, { "  " }, { filename } }
         end,
       })
     end,
