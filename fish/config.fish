@@ -85,3 +85,6 @@ fish_add_path /opt/homebrew/sbin
 # volta PATH
 set -gx VOLTA_HOME "$HOME/.volta"
 fish_add_path "$VOLTA_HOME/bin"
+
+# cargo
+fish_add_path "$HOME/.cargo/bin"
