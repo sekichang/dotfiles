@@ -15,36 +15,10 @@ return {
     },
   },
 
-  -- nightfox
-  {
-    "EdenEast/nightfox.nvim",
-    lazy = true,
-    priority = 1000,
-    opts = {
-      options = {
-        dim_inactive = true, --  dims inactive windows
-      },
-    },
-  },
-
-  -- catppuccin
-  {
-    "catppuccin/nvim",
-    opts = function(_, opts)
-      local module = require("catppuccin.groups.integrations.bufferline")
-      if module then
-        module.get = module.get_theme
-      end
-      return opts
-    end,
-  },
-
   {
     "LazyVim/LazyVim",
     opts = {
-      -- colorscheme = "tokyonight",
       colorscheme = "catppuccin",
-      -- colorscheme = "nightfox",
     },
   },
 }
