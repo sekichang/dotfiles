@@ -14,4 +14,5 @@ mkdir -p ~/.local/share/tig
 cd ~/.config/fish
 ln -s ~/dotfiles/fish/config.fish
 
+ln -s ~/dotfiles/starship/starship.toml ~/.config/starship.toml
 ```
