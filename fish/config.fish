@@ -88,3 +88,6 @@ fish_add_path "$VOLTA_HOME/bin"
 
 # cargo
 fish_add_path "$HOME/.cargo/bin"
+
+# claude
+fish_add_path "$HOME/.local/bin"
