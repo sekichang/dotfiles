@@ -1,6 +1,15 @@
-[init]
-	defaultBranch = main
 [user]
 	name = sekichang
 	email = sekichang@gmail.com
+
 [core]
+  editor = nvim
+
+[init]
+	defaultBranch = main
+
+[pull]
+  rebase = true
+
+[ghq]
+  root = ~/ghq
