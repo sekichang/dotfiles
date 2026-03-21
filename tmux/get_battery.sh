@@ -1,17 +1,28 @@
- #!/bin/sh
+#!/bin/bash
 
-if battery_info=$(/usr/bin/pmset -g ps | awk '{ if (NR == 2) print $3 " " $4 }' | sed -e "s/;//g" -e "s/%//") ; then
-  battery_quantity=$(echo $battery_info | awk '{print $1}')
-  if [[ ! $battery_info =~ "discharging" ]]; then
-    battery="#[bg=green,fg=black]  ⚡$battery_quantity% #[default]"
-  elif (( $battery_quantity > 20 )); then
-    battery="#[bg=green,fg=black] $battery_quantity% #[default]"
-  elif (( $battery_quantity > 10 )); then
-    battery="#[bg=yellow,fg=black] $battery_quantity% #[default]"
-  elif (( $battery_quantity > 5 )); then
-    battery="#[bg=orange,fg=black] $battery_quantity% #[default]"
-  else
-    battery="#[bg=red,fg=black] $battery_quantity% #[default]"
-  fi
-  echo $battery
+battery_info=$(/usr/bin/pmset -g ps | awk 'NR==2 { gsub(/;|%/, ""); print $3, $4 }')
+battery_quantity=$(echo "$battery_info" | awk '{print $1}')
+
+if [ -z "$battery_quantity" ]; then
+  exit 0
 fi
+
+# 充電中かどうか
+if echo "$battery_info" | grep -qv "discharging"; then
+  icon="⚡"
+else
+  icon=""
+fi
+
+# バッテリー残量で色を変える (Catppuccin Mocha)
+if [ "$battery_quantity" -gt 80 ]; then
+  color="#a6e3a1" # Green
+elif [ "$battery_quantity" -gt 50 ]; then
+  color="#f9e2af" # Yellow
+elif [ "$battery_quantity" -gt 20 ]; then
+  color="#fab387" # Peach
+else
+  color="#f38ba8" # Red
+fi
+
+echo "#[fg=$color]$icon$battery_quantity%#[default]"
