@@ -15,11 +15,11 @@ else
 fi
 
 # バッテリー残量で色を変える (Catppuccin Mocha)
-if [ "$battery_quantity" -gt 80 ]; then
+if [ "$battery_quantity" -gt 50 ]; then
   color="#a6e3a1" # Green
-elif [ "$battery_quantity" -gt 50 ]; then
-  color="#f9e2af" # Yellow
 elif [ "$battery_quantity" -gt 20 ]; then
+  color="#f9e2af" # Yellow
+elif [ "$battery_quantity" -gt 10 ]; then
   color="#fab387" # Peach
 else
   color="#f38ba8" # Red
