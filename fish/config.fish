@@ -1,130 +1,157 @@
-# Suppress greeting
+# =============================================================================
+# General
+# =============================================================================
+
+# 起動時のあいさつメッセージを非表示
 set -g fish_greeting ""
 
+# =============================================================================
 # Environment Variables
+# =============================================================================
+
+# デフォルトエディタ
 set -gx EDITOR nvim
 set -gx VISUAL nvim
+
+# デフォルトページャー
 set -gx PAGER less
 
+# =============================================================================
 # XDG Base Directory
+# =============================================================================
+
 set -gx XDG_CONFIG_HOME $HOME/.config
 set -gx XDG_DATA_HOME $HOME/.local/share
 set -gx XDG_CACHE_HOME $HOME/.cache
 
+# =============================================================================
 # Language / Locale
+# =============================================================================
+
 set -gx LANG ja_JP.UTF-8
 set -gx LC_ALL ja_JP.UTF-8
 
-# Color support (256color / TrueColor)
-# Ghostty sets TERM=xterm-ghostty; fallback for other terminals
+# =============================================================================
+# Color Support
+# =============================================================================
+
+# Ghostty は TERM=xterm-ghostty を設定するためスキップ
+# それ以外のターミナルでは 256color を明示的に指定
 if test "$TERM" != xterm-ghostty
     set -gx TERM xterm-256color
-    # set -gx TERM screen-256color
 end
+
+# TrueColor (24bit) を有効化
 set -gx COLORTERM truecolor
 
+# =============================================================================
 # PATH
-fish_add_path /opt/homebrew/bin
-fish_add_path /opt/homebrew/sbin
-fish_add_path $HOME/.local/bin
-fish_add_path $HOME/go/bin
-fish_add_path "$HOME/.cargo/bin"
-fish_add_path $HOME/.bun/bin
-set -gx BUN_INSTALL $HOME/.bun
+# =============================================================================
 
-# bun
-# set --export BUN_INSTALL "$HOME/.bun"
-# set --export PATH $BUN_INSTALL/bin $PATH
+fish_add_path /opt/homebrew/bin # Homebrew (Apple Silicon)
+fish_add_path /opt/homebrew/sbin # Homebrew sbin
+fish_add_path $HOME/.local/bin # ユーザーローカルバイナリ
+fish_add_path $HOME/go/bin # Go バイナリ
+fish_add_path $HOME/.cargo/bin # Rust (Cargo) バイナリ
+fish_add_path $HOME/.bun/bin # Bun バイナリ
 
-# Starship
+set -gx BUN_INSTALL $HOME/.bun # Bun インストールパス
+
+# =============================================================================
+# Tools Initialization
+# =============================================================================
+
+# Starship: クロスシェルプロンプト
 if command -q starship
     starship init fish | source
 end
 
-# zoxide
+# zoxide: 履歴ベースのスマートな cd
 if command -q zoxide
     zoxide init fish | source
 end
 
-# mise
+# mise: ランタイムバージョン管理 (Node, Python, Ruby など)
 if command -q mise
     mise activate fish | source
 end
 
-# neovim
+# =============================================================================
+# Aliases (balias)
+# =============================================================================
+
+# --- Editor ---
 if type -q nvim
     balias vi nvim
 end
 
+# --- eza: ls の代替 (アイコン・git 情報付き) ---
 if type -q eza
-    # balias ls 'eza --git --icons --group-directories-first'
-    # balias la 'ls -a'
-    # balias ll 'ls -lh --time-style iso'
-    # balias lla 'll -a'
-    # balias lt 'la -T -L 3 -I ".git|.cache"'
-
     balias ls 'eza --git --icons --group-directories-first'
     balias la 'eza --git --icons --group-directories-first -a'
-    balias ll 'eza --git --icons --group-directories-first -lh --time-style iso'
+    balias ll 'eza --git --icons --group-directories-first -lh  --time-style iso'
     balias lla 'eza --git --icons --group-directories-first -lha --time-style iso'
     balias lt 'eza --git --icons --group-directories-first -a -T -L 3 -I ".git|.cache"'
 end
 
-# bat
+# --- bat: cat の代替 (シンタックスハイライト付き) ---
 if type -q bat
     balias cat bat
 end
 
-# awk
+# --- GNU awk / sed: macOS 標準の BSD 版より機能が豊富 ---
 if type -q gawk
     balias awk gawk
 end
-
-# sed
 if type -q gsed
     balias sed gsed
 end
 
+# --- ripgrep / fd: grep / find の高速代替 ---
 if type -q rg
     balias grep rg
 end
-
 if type -q fd
     balias find fd
 end
 
-balias mkdir 'mkdir -p'
-
-# cd
+# --- ディレクトリ操作 ---
+balias mkdir 'mkdir -p' # 中間ディレクトリも自動作成
 balias ... 'cd ../..'
 balias .... 'cd ../../..'
 
-# git
+# =============================================================================
+# Abbreviations (abbr)
+# =============================================================================
+
+# --- Git ---
 abbr -a g git
-abbr -a ga _fzf_git_add
+abbr -a ga 'git add'
 abbr -a gc 'git commit'
+abbr -a gcm 'git commit -m'
 abbr -a gco 'git checkout'
 abbr -a gd 'git diff'
-abbr -a gcm 'git commit -m'
-abbr -a gs 'git status'
 abbr -a gp 'git push'
+abbr -a gpl 'git pull'
+abbr -a gs 'git status'
 
-# lazygit
+# --- lazygit: TUI Git クライアント (tmux 新ウィンドウで起動) ---
 abbr -a lg lazygit
 function lg
     tmux new-window -n lazygit lazygit
 end
 
-# docker
+# --- Docker ---
 abbr -a d docker
 
-# python
+# --- Python ---
 abbr -a py python3
 abbr -a python python3
 
-# tmux
+# --- tmux ---
 if type -q tmux
     abbr -a t tmux
+    abbr -a ta 'tmux a -t' # 指定したセッションに戻る
     abbr -a tl 'tmux ls'
-    abbr -a tn 'tmux new -s ' # 名前をつけて新規セッション開始
+    abbr -a tn 'tmux new -s' # 名前付きで新規セッション開始
 end
