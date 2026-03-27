@@ -71,7 +71,7 @@ if command -q zoxide
     zoxide init fish | source
 end
 
-# mise: ランタイムバージョン管理 (Node, Python, Ruby など)
+# mise: ランタイムバージョン管理 (Node, Python, bun など)
 if command -q mise
     mise activate fish | source
 end
