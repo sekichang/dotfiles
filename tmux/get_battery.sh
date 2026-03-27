@@ -25,4 +25,4 @@ else
   color="#f38ba8" # Red
 fi
 
-echo "#[fg=$color]$icon$battery_quantity%#[default]"
+echo "#[fg=$color]$icon$battery_quantity% #[default]"
