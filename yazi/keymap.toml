@@ -1,0 +1,16 @@
+# ── ディレクトリジャンプ ──────────────────────────
+[[mgr.prepend_keymap]]
+on = ["g", "D"]
+run = "cd ~/Desktop"
+desc = "Go to ~/Desktop"
+
+# ── zoxideでインタラクティブジャンプ ────────────────
+[[mgr.prepend_keymap]]
+on = "<C-j>"
+run = "plugin zoxide"
+desc = "zoxide jump"
+
+[[mgr.prepend_keymap]]
+on = "<Enter>"
+run = "plugin smart-enter"
+desc = "Enter the child directory, or open the file"
