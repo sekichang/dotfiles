@@ -1,3 +1,7 @@
+[mgr]
+# 隠しファイルの表示
+show_hidden = true
+
 [opener]
 edit = [{ run = "nvim %*", block = true }]
 
