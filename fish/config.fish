@@ -77,48 +77,48 @@ if command -q mise
 end
 
 # =============================================================================
-# Aliases (balias)
+# Aliases
 # =============================================================================
 
 # --- Editor ---
 if type -q nvim
-    balias vi nvim
+    alias vi nvim
 end
 
 # --- eza: ls の代替 (アイコン・git 情報付き) ---
 if type -q eza
-    balias ls 'eza --git --icons --group-directories-first'
-    balias la 'eza --git --icons --group-directories-first -a'
-    balias ll 'eza --git --icons --group-directories-first -lh  --time-style iso'
-    balias lla 'eza --git --icons --group-directories-first -lha --time-style iso'
-    balias lt 'eza --git --icons --group-directories-first -a -T -L 3 -I ".git|.cache"'
+    alias ls 'eza --git --icons --group-directories-first'
+    alias la 'eza --git --icons --group-directories-first -a'
+    alias ll 'eza --git --icons --group-directories-first -lh  --time-style iso'
+    alias lla 'eza --git --icons --group-directories-first -lha --time-style iso'
+    alias lt 'eza --git --icons --group-directories-first -a -T -L 3 -I ".git|.cache"'
 end
 
 # --- bat: cat の代替 (シンタックスハイライト付き) ---
 if type -q bat
-    balias cat bat
+    alias cat bat
 end
 
 # --- GNU awk / sed: macOS 標準の BSD 版より機能が豊富 ---
 if type -q gawk
-    balias awk gawk
+    alias awk gawk
 end
 if type -q gsed
-    balias sed gsed
+    alias sed gsed
 end
 
 # --- ripgrep / fd: grep / find の高速代替 ---
 if type -q rg
-    balias grep rg
+    alias grep rg
 end
 if type -q fd
-    balias find fd
+    alias find fd
 end
 
 # --- ディレクトリ操作 ---
-balias mkdir 'mkdir -p' # 中間ディレクトリも自動作成
-balias ... 'cd ../..'
-balias .... 'cd ../../..'
+alias mkdir 'mkdir -p' # 中間ディレクトリも自動作成
+alias ... 'cd ../..'
+alias .... 'cd ../../..'
 
 # =============================================================================
 # Abbreviations (abbr)
