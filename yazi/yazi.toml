@@ -1,6 +1,8 @@
 [mgr]
 # 隠しファイルの表示
 show_hidden = true
+# 更新日時の表示
+linemode = "mtime_only"
 
 [opener]
 edit = [{ run = "nvim %*", block = true }]
