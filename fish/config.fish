@@ -51,7 +51,6 @@ set -gx COLORTERM truecolor
 fish_add_path /opt/homebrew/bin # Homebrew (Apple Silicon)
 fish_add_path /opt/homebrew/sbin # Homebrew sbin
 fish_add_path $HOME/.local/bin # ユーザーローカルバイナリ
-fish_add_path $HOME/go/bin # Go バイナリ
 fish_add_path $HOME/.cargo/bin # Rust (Cargo) バイナリ
 fish_add_path $HOME/.bun/bin # Bun バイナリ
 
