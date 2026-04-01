@@ -24,7 +24,7 @@ macos-titlebar-style = hidden
 #   背景
 # ---------------------------------------
 # 背景色（カスタムカラー）
-background = #031219
+background = #1e1e2e
 # background-opacity = 0.9
 # 背景ブラーの強度（macOS のみ有効）
 background-blur-radius = 20
