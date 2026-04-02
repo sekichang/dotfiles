@@ -22,6 +22,10 @@ keymap("n", "N", "Nzz")
 keymap("n", "+", "<C-a>")
 keymap("n", "-", "<C-x>")
 
+-- Insert mode cursor movement
+keymap("i", "<C-h>", "<Left>", { desc = "Move cursor left" })
+keymap("i", "<C-l>", "<Right>", { desc = "Move cursor right" })
+
 -- minisurround
 -- gsaiw' // 単語の周りを'で囲む
 -- gsd' // 単語の周りの'を削除
