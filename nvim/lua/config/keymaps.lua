@@ -23,14 +23,14 @@ keymap("n", "+", "<C-a>")
 keymap("n", "-", "<C-x>")
 
 --
-keymap("n", "<Tab>", "<cmd>bnext<cr>", { desc = "Next buffer" })
-keymap("n", "<S-Tab>", "<cmd>bprev<cr>", { desc = "Prev buffer" })
+-- keymap("n", "<Tab>", "<cmd>bnext<cr>", { desc = "Next buffer" })
+-- keymap("n", "<S-Tab>", "<cmd>bprev<cr>", { desc = "Prev buffer" })
 
 -- Insert mode cursor movement
 keymap("i", "<C-h>", "<Left>", { desc = "Move cursor left" })
 keymap("i", "<C-l>", "<Right>", { desc = "Move cursor right" })
 
--- minisurround
+-- mini.surround
 -- gsaiw' // 単語の周りを'で囲む
 -- gsd' // 単語の周りの'を削除
 -- gsr'" // 単語の周りの'を"に置換
