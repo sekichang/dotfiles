@@ -57,15 +57,15 @@ return {
   -- },
 
   -- statusline
-  -- {
-  -- "nvim-lualine/lualine.nvim",
-  -- event = "VeryLazy",
-  -- opts = {
-  --   options = {
-  -- theme = "solarized_dark",
-  --   },
-  -- },
-  -- },
+  {
+    "nvim-lualine/lualine.nvim",
+    event = "VeryLazy",
+    config = function(_, opts)
+      opts.options = opts.options or {}
+      opts.options.theme = "catppuccin-mocha"
+      require("lualine").setup(opts)
+    end,
+  },
 
   -- markdown
   {
