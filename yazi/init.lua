@@ -3,7 +3,9 @@ require("git"):setup({
 	order = 0,
 })
 
-require("zoxide"):setup()
+require("zoxide"):setup({
+	update_db = true,
+})
 
 ---@diagnostic disable: undefined-global
 function Linemode:mtime_only()
