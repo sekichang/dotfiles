@@ -5,9 +5,6 @@ function fish_user_key_bindings
     # bind \cj 'zi; commandline -f repaint'
     bind \cj _fzf_zoxide
 
-    # Ctrl+R — fzf history
-    # bind \cr _fzf_history
-
     # Ctrl+O - 直近のファイルを選択してnvimでopen
     bind \co _fzf_recent_files
 
