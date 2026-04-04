@@ -17,8 +17,8 @@ set -x FZF_CTRL_T_OPTS '
   --preview-window right:50%
 '
 set -x FZF_CTRL_R_OPTS '
-  --with-nth 2..
-  --preview "echo {2..}"
+  --with-nth 3..
+  --preview "echo {3..}"
   --preview-window down:3:wrap
-  --bind "ctrl-y:execute-silent(echo -n {2..} | pbcopy)"
+  --bind "ctrl-y:execute-silent(echo -n {3..} | pbcopy)"
 '
