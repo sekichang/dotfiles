@@ -14,7 +14,7 @@ set -x FZF_DEFAULT_OPTS "$FZF_DEFAULT_OPTS
 set -x FZF_CTRL_T_COMMAND 'fd --type f --hidden --follow --exclude .git --exclude node_modules'
 set -x FZF_CTRL_T_OPTS '
   --preview "bat --color=always --style=numbers {}"
-  --preview-window right:60%
+  --preview-window right:50%
 '
 set -x FZF_CTRL_R_OPTS '
   --with-nth 2..
