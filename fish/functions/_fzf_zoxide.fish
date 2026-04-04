@@ -16,7 +16,7 @@ function _fzf_zoxide
     )
     if test -n "$dir"
         cd $dir
-        zoxide add $dir
+        # zoxide add $dir
         commandline -f repaint
     end
 end
