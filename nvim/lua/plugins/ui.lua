@@ -54,30 +54,32 @@ return {
 
   {
     "b0o/incline.nvim",
-    event = "BufReadPre",
-    dependencies = { "folke/tokyonight.nvim" },
-    priority = 1200,
+    event = "VeryLazy",
     config = function()
-      local colors = require("tokyonight.colors").setup()
+      local helpers = require("incline.helpers")
+      local devicons = require("nvim-web-devicons")
       require("incline").setup({
-        highlight = {
-          groups = {
-            InclineNormal = { guibg = colors.dark3 }, --, guifg = colors.black },
-            -- InclineNormalNC = { guifg = colors.dark3, guibg = colors.black },
-          },
+        window = {
+          padding = 0,
+          margin = { horizontal = 0 },
         },
-        window = { margin = { vertical = 0, horizontal = 1 } },
         hide = {
           cursorline = true,
         },
         render = function(props)
           local filename = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(props.buf), ":t")
-          if vim.bo[props.buf].modified then
-            filename = "[+] " .. filename
+          if filename == "" then
+            filename = "[No Name]"
           end
-
-          local icon = require("nvim-web-devicons").get_icon(filename)
-          return { { icon }, { "  " }, { filename } }
+          local ft_icon, ft_color = devicons.get_icon_color(filename)
+          local modified = vim.bo[props.buf].modified
+          return {
+            ft_icon and { " ", ft_icon, " ", guibg = ft_color, guifg = helpers.contrast_color(ft_color) } or "",
+            " ",
+            { filename, gui = modified and "bold,italic" or "bold" },
+            " ",
+            guibg = "#44406e",
+          }
         end,
       })
     end,
