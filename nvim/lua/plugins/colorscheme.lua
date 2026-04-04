@@ -23,13 +23,16 @@ return {
         shade = "dark",
         percentage = 0.15,
       },
+      integrations = {
+        bufferline = true,
+      },
     },
   },
 
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "catppuccin",
+      colorscheme = "catppuccin-mocha",
     },
   },
 }
