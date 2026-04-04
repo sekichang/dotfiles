@@ -1,3 +1,4 @@
+set -gx ZOXIDE_DATA_DIR "$XDG_DATA_HOME/zoxide"
 set -gx _ZO_FZF_OPTS "
   --reverse
   --style=full:rounded
