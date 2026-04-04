@@ -20,3 +20,7 @@ desc = "Enter the child directory, or open the file"
 on = ["g", "l"]
 run = "shell --block -- lazygit"
 desc = "lazygit"
+
+# ── 1回Esc押したら入力欄を閉じる ──────────────────
+[input]
+prepend_keymap = [{ on = "<Esc>", run = "close", desc = "Cancel input" }]
