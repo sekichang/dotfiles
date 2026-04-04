@@ -4,7 +4,11 @@ function _fzf_recent_files
             if test -f $f
                 echo $f
             end
-        end | fzf --prompt "recent files ❯ " --height 40% --layout reverse --border --preview "bat --color=always {}")
+        end | fzf \
+        --prompt "recent files ❯ " \
+        --height 90% \
+        --preview 'bat --style=numbers --color=always {}' \
+        --preview-window=down,60%,wrap)
 
     rm -f /tmp/nvim_oldfiles
 
