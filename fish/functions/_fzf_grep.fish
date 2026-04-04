@@ -1,6 +1,7 @@
 function _fzf_grep
     FZF_DEFAULT_COMMAND='rg --color=always --line-number --no-heading ""' \
-        fzf --ansi \
+        fzf \
+        --ansi \
         --disabled \
         --bind 'change:reload:rg --color=always --line-number --no-heading {q} || true' \
         --delimiter : \
