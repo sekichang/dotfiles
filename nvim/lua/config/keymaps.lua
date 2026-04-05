@@ -1,5 +1,5 @@
 -- h/j/k/l を連続で使わないように警告
-local discipline = require("discipline")
+local discipline = require("util.discipline")
 discipline.cowboy()
 
 local keymap = vim.keymap.set
