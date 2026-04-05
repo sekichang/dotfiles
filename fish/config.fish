@@ -2,6 +2,11 @@
 # General
 # =============================================================================
 
+# config.fish
+if status is-interactive
+    fish_config theme choose catppuccin-mocha --color-theme=dark
+end
+
 # 起動時のあいさつメッセージを非表示
 set -g fish_greeting ""
 
