@@ -27,8 +27,8 @@ keymap("n", "-", "<C-x>")
 -- keymap("n", "<S-Tab>", "<cmd>bprev<cr>", { desc = "Prev buffer" })
 
 -- Insert mode cursor movement
-keymap("i", "<C-h>", "<Left>", { desc = "Move cursor left" })
-keymap("i", "<C-l>", "<Right>", { desc = "Move cursor right" })
+keymap("i", "<C-b>", "<Left>", { desc = "Move cursor left" })
+keymap("i", "<C-f>", "<Right>", { desc = "Move cursor right" })
 
 -- mini.surround
 -- gsaiw' // 単語の周りを'で囲む
