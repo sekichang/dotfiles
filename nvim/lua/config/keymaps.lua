@@ -1,9 +1,8 @@
--- Keymaps are automatically loaded on the VeryLazy event
--- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
--- Add any additional keymaps here
+-- h/j/k/l を連続で使わないように警告
+local discipline = require("discipline")
+discipline.cowboy()
 
 local keymap = vim.keymap.set
-local opts = { noremap = true, silent = true }
 
 keymap("n", "x", '"_x')
 
@@ -22,15 +21,6 @@ keymap("n", "N", "Nzz")
 keymap("n", "+", "<C-a>")
 keymap("n", "-", "<C-x>")
 
---
--- keymap("n", "<Tab>", "<cmd>bnext<cr>", { desc = "Next buffer" })
--- keymap("n", "<S-Tab>", "<cmd>bprev<cr>", { desc = "Prev buffer" })
-
 -- Insert mode cursor movement
 keymap("i", "<C-b>", "<Left>", { desc = "Move cursor left" })
 keymap("i", "<C-f>", "<Right>", { desc = "Move cursor right" })
-
--- mini.surround
--- gsaiw' // 単語の周りを'で囲む
--- gsd' // 単語の周りの'を削除
--- gsr'" // 単語の周りの'を"に置換
