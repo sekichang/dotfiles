@@ -4,6 +4,7 @@ set -x FZF_DEFAULT_OPTS '
   --style=full:rounded
   --height 45%
   --margin 0,5%
+  --ansi
 '
 set -x FZF_DEFAULT_OPTS "$FZF_DEFAULT_OPTS
   --color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8

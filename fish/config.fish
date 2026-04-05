@@ -101,6 +101,7 @@ end
 # --- bat: cat の代替 (シンタックスハイライト付き) ---
 if type -q bat
     alias cat bat
+    set -gx BAT_THEME "Catppuccin Mocha"
 end
 
 # --- GNU awk / sed: macOS 標準の BSD 版より機能が豊富 ---
