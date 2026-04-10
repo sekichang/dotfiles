@@ -135,4 +135,25 @@ return {
       },
     },
   },
+
+  {
+    "mvllow/modes.nvim",
+    event = "VeryLazy",
+    opts = {
+      colors = {
+        copy = "",
+        delete = "",
+        change = "",
+        format = "",
+        replace = "",
+        select = "",
+        insert = "#a6e3a1", -- Green
+        visual = "#cba4f7", -- Mauve
+      },
+      line_opacity = {
+        insert = 0.3,
+        visual = 0.5,
+      },
+    },
+  },
 }
