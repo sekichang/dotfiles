@@ -106,13 +106,14 @@ return {
   -- statusline
   {
     "nvim-lualine/lualine.nvim",
-    event = "VeryLazy",
-    config = function(_, opts)
-      opts.options = opts.options or {}
-      opts.options.theme = "catppuccin-mocha"
-      -- opts.options.theme = "tokyonight"
-      require("lualine").setup(opts)
-    end,
+    -- event = "VeryLazy",
+    -- config = function(_, opts)
+    --   opts.options = opts.options or {}
+    --   opts.options.theme = "catppuccin-mocha"
+    --   -- opts.options.theme = "tokyonight"
+    --   require("lualine").setup(opts)
+    -- end,
+    enabled = false,
   },
 
   -- markdown
