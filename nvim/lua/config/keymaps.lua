@@ -24,3 +24,5 @@ keymap("n", "-", "<C-x>")
 -- Insert mode cursor movement
 keymap("i", "<C-b>", "<Left>", { desc = "Move cursor left" })
 keymap("i", "<C-f>", "<Right>", { desc = "Move cursor right" })
+
+vim.keymap.set({ "n", "i", "v" }, "<C-s>", "<cmd>silent w<cr><esc>", { desc = "Save File" })

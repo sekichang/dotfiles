@@ -1,7 +1,3 @@
--- Options are automatically loaded before lazy.nvim startup
--- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
--- Add any additional options here
-
 local opt = vim.opt
 
 opt.virtualedit = "all" -- 文字がない場所にもカーソルを移動できるようにする
@@ -13,3 +9,11 @@ opt.swapfile = false -- swapfileは作成しない
 -- Undercurl
 vim.cmd([[let &t_Cs="\e[4:3m"]])
 vim.cmd([[let &t_Ce="\e[4:0m"]])
+
+-- clear statusline
+vim.opt.laststatus = 0 -- コマンドラインを非表示（noice.nvimが担当）
+vim.opt.laststatus = 0 -- ステータスラインを非表示（incline.nvimが担当）
+vim.opt.showmode = false -- モード表示を非表示（modes.nvimが担当）
+
+-- silently save
+vim.cmd("cabbrev w silent w")
