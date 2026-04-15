@@ -10,7 +10,7 @@ keymap("n", "x", '"_x')
 keymap("n", "<C-a>", "ggVG")
 
 -- 行頭/行末に移動
-keymap({ "n", "x" }, "H", "0")
+keymap({ "n", "x" }, "H", "^")
 keymap({ "n", "x" }, "L", "$")
 
 keymap("n", "G", "Gzz")
