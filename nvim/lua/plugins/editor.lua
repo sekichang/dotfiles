@@ -49,4 +49,14 @@ return {
       { "<leader>e", "<cmd>Yazi<cr>", desc = "Open Yazi" },
     },
   },
+
+  {
+    "stevearc/oil.nvim",
+    event = "VeryLazy",
+    dependencies = { { "nvim-mini/mini.icons", opts = {} } },
+    keys = {
+      { "<leader>o", "<cmd>Oil<cr>", desc = "Open Oil" },
+    },
+    opts = {},
+  },
 }
