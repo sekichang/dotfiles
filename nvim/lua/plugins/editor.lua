@@ -57,6 +57,14 @@ return {
     keys = {
       { "<leader>o", "<cmd>Oil<cr>", desc = "Open Oil" },
     },
-    opts = {},
+    opts = {
+      keymaps = {
+        ["<ESC>"] = { "actions.close", mode = "n" },
+      },
+      view_options = {
+        -- Show files and directories that start with "."
+        show_hidden = true,
+      },
+    },
   },
 }
