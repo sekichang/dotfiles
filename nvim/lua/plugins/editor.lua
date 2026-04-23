@@ -39,6 +39,7 @@ return {
         --   multi_line = false,
         -- },
       },
+      label = { uppercase = false },
     },
   },
   {
