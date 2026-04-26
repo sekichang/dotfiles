@@ -36,3 +36,5 @@ map("n", "Q", "q", { noremap = true })
 -- Insert mode cursor movement
 map("i", "<C-b>", "<Left>")
 map("i", "<C-f>", "<Right>")
+map("i", "<C-a>", "<Home>")
+map("i", "<C-e>", "<End>")
