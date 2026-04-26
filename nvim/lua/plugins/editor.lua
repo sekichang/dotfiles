@@ -10,8 +10,8 @@ return {
     "monaqa/dial.nvim",
     -- stylua: ignore
     keys = {
-      { "<C-a>", function() return require("dial.map").inc_normal() end, expr = true, desc = "Increment" },
-      { "<C-x>", function() return require("dial.map").dec_normal() end, expr = true, desc = "Decrement" },
+      { "+", function() require("dial.map").manipulate("increment", "normal") end },
+      { "-", function() require("dial.map").manipulate("decrement", "normal") end },
     },
     config = function()
       local augend = require("dial.augend")

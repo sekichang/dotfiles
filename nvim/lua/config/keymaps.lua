@@ -23,10 +23,6 @@ map("n", "N", "Nzz")
 map("n", "<c-d>", "<c-d>zz")
 map("n", "<c-u>", "<c-u>zz")
 
--- increment/decrement
-map("n", "+", "<C-a>")
-map("n", "-", "<C-x>")
-
 -- 全選択
 map("n", "<C-a>", "ggVG")
 
