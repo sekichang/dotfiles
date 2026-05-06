@@ -42,9 +42,9 @@ set -gx LC_ALL ja_JP.UTF-8
 
 # Ghostty は TERM=xterm-ghostty を設定するためスキップ
 # それ以外のターミナルでは 256color を明示的に指定
-if test "$TERM" != xterm-ghostty
-    set -gx TERM xterm-256color
-end
+# if test "$TERM" != xterm-ghostty
+#     set -gx TERM xterm-256color
+# end
 
 # TrueColor (24bit) を有効化
 set -gx COLORTERM truecolor
