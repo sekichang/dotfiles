@@ -5,8 +5,10 @@ discipline.cowboy()
 local map = vim.keymap.set
 
 -- 削除/変更でレジスタを使わない
-map({ "n", "x" }, "x", '"_x')
+map({ "n" }, "x", '"_x')
 map({ "n", "x" }, "c", '"_c')
+map({ "n", "x" }, "C", '"_C')
+map({ "n", "x" }, "D", '"_D')
 
 -- 行頭/行末へ移動
 map({ "n", "x" }, "H", "^")
