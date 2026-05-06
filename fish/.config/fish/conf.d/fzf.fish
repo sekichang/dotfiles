@@ -24,3 +24,5 @@ set -x FZF_CTRL_R_OPTS '
   --preview-window down:3:wrap
   --bind "ctrl-y:execute-silent(echo -n {3..} | pbcopy)"
 '
+set -x FZF_TMUX 1
+set -x FZF_TMUX_OPTS '-p 80%'
