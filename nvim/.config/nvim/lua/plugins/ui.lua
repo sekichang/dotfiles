@@ -147,6 +147,7 @@ return {
         },
       },
       window = {
+        placement = { horizontal = "right", vertical = "bottom" },
         margin = { vertical = 1, horizontal = 0 },
         padding = { left = 1, right = 1 },
       },
