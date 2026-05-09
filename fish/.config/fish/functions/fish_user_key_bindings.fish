@@ -11,12 +11,12 @@ function fish_user_key_bindings
     # Ctrl+G - grep
     bind \cg _fzf_grep
 
-    # Alt+J - 親ディレクトリ以上の祖先をfzfで選択してjump
-    # bind \e\[44\;5u _fzf_jump_parent_dirs
-    bind \ej _fzf_jump_parent_dirs
+    # Ctrl+, - 親ディレクトリ以上の祖先をfzfで選択してjump
+    bind \e\[44\;5u _fzf_jump_parent_dirs
+    # bind \ej _fzf_jump_parent_dirs
 
-    # Alt+K - サブディレクトリをfzfで選択してjump
-    # bind \e\[46\;5u _fzf_jump_subdir
-    bind \ek _fzf_jump_subdir
+    # Ctrl+. - サブディレクトリをfzfで選択してjump
+    bind \e\[46\;5u _fzf_jump_subdir
+    # bind \ek _fzf_jump_subdir
 
 end
