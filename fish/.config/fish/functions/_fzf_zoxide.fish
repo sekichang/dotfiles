@@ -3,7 +3,7 @@ function _fzf_zoxide
         begin
             ghq list --full-path | awk '{printf "       - [ghq] %s\n", $0}'
             zoxide query --list --score | awk '{printf "%7.2f  [zi]  %s\n", $1, $2}'
-        end | fzf \
+        end | fzf-tmux -p 80% \
             --reverse \
             --style=full:rounded \
             --height=75% \

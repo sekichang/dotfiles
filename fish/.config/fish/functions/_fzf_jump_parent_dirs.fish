@@ -7,7 +7,7 @@ function _fzf_jump_parent_dirs
         set -a dirs $dir
     end
 
-    set -l selected (string join \n $dirs | fzf \
+    set -l selected (string join \n $dirs | fzf-tmux -p 80% \
       --prompt "jump to parent ❯ " \
       --height 80% \
       --layout reverse \

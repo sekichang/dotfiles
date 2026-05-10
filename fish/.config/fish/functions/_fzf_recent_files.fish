@@ -4,7 +4,7 @@ function _fzf_recent_files
             if test -f $f
                 echo $f
             end
-        end | fzf \
+        end | fzf-tmux -p 80% \
         --prompt "recent files ❯ " \
         --height 90% \
         --preview 'bat --style=numbers --color=always {}' \

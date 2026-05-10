@@ -1,5 +1,10 @@
 function _fzf_jump_subdir
-    set -l selected (fd --type d --hidden --max-depth 3 --exclude .git --exclude node_modules . $PWD | fzf \
+    set -l selected (fd \
+      --type d \
+      --hidden \
+      --max-depth 3 \
+      --exclude .git \
+      --exclude node_modules . $PWD | fzf-tmux -p 80% \
       --prompt="jump to subdir> " \
       --height 80% \
       --layout reverse \
