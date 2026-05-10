@@ -58,3 +58,13 @@ macos-option-as-alt = left
 # Alt+←/→ のデフォルトバインドを解除（シェル/エディタに委譲）
 keybind = alt+left=unbind
 keybind = alt+right=unbind
+
+# ---------------------------------------
+#   キーバインド
+# ---------------------------------------
+# shift + Enter を押したときに、特殊なエスケープシーケンスを送信する
+# keybind = shift+enter=text:\x1b[13;2u
+# Ctrl + , を押したときに、特殊なエスケープシーケンスを送信する
+# keybind = ctrl+,=text:\x1b[44;5u
+# Ctrl + . を押したときに、特殊なエスケープシーケンスを送信する
+# keybind = ctrl+,=text:\x1b[46;5u
