@@ -24,5 +24,10 @@ set -x FZF_CTRL_R_OPTS '
   --preview-window down:3:wrap
   --bind "ctrl-y:execute-silent(echo -n {3..} | pbcopy)"
 '
+set -x FZF_ALT_C_COMMAND 'fd --type d --hidden --follow --exclude .git --exclude node_modules'
+set -x FZF_ALT_C_OPTS "
+      --preview-window=down,50%,wrap  --preview 'eza -la --icons --sort modified -r --color=always --time-style iso {}'
+"
+
 set -x FZF_TMUX 1
 set -x FZF_TMUX_OPTS '-p 80%'
