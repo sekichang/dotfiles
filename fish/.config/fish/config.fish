@@ -72,7 +72,7 @@ end
 
 # zoxide: 履歴ベースのスマートな cd
 if command -q zoxide
-    zoxide init fish | source
+    zoxide init fish --cmd cd | source
 end
 
 # mise: ランタイムバージョン管理 (Node, Python, bun など)
