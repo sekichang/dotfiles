@@ -1,5 +1,6 @@
 [tools]
 bun = "latest"
+codex = "latest"
 go = "latest"
 node = "24.14.0"
 python = "latest"
